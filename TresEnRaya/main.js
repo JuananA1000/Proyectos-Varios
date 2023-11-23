@@ -37,3 +37,21 @@ function play(y) {
     draw();
   }
 }
+
+function checkWinner(a, b, c) {
+  a--;
+  b--;
+  c--;
+  if (
+    span[a].dataset.player === span[b].dataset.player &&
+    span[b].dataset.player === span[c].dataset.player &&
+    span[a].dataset.player === span[c].dataset.player &&
+    (span[a].dataset.player === 'x' || span[a].dataset.player === 'o') &&
+    isGameOver == false
+  ) {
+    span[a].parentNode.className += ' activeBox';
+    span[b].parentNode.className += ' activeBox';
+    span[c].parentNode.className += ' activeBox';
+    isGameOver(a);
+  }
+}
