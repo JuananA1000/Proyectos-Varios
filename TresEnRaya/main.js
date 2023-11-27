@@ -73,3 +73,19 @@ function resetGame() {
   }
   playerTurn = 'x';
 }
+
+function gameOver(a) {
+  let gameOverAlertElement =
+    '<span style="backgrodund-color: red">GAME OVER</span><br><br>' +
+    span[a].dataset.player.toUpperCase() +
+    'Win!!<br><br>' +
+    restartButton;
+
+  const div = document.createElement('div');
+  div.className = 'alert';
+  div.innerHTML = gameOverAlertElement;
+  document.getElementsByTagName('body')[0].appendChild(div);
+
+  window.isGameOver = true;
+  moves = 0;
+}
