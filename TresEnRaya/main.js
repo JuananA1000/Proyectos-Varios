@@ -65,3 +65,11 @@ function playAgain() {
     span[i].parentNode.className = span[i].parentNode.className.replace('activeBox', '');
   }
 }
+
+function resetGame() {
+  for (let i = 0; i < span.length; i++) {
+    span[i].dataset.player = 'none';
+    span[i].innerHTML = '&nbsp';
+  }
+  playerTurn = 'x';
+}
