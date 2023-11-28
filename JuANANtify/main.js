@@ -68,3 +68,9 @@ function loadMusic(song) {
   image.src = song.cover;
   background.src = song.cover;
 }
+
+function changeMusic(direction) {
+  musicIndex = (musicIndex + direction + songs.length) % songs.length;
+  loadMusic(songs[musicIndex]);
+  playMusic();
+}
