@@ -61,3 +61,10 @@ function pauseMusic() {
 
   music.pause();
 }
+
+function loadMusic(song) {
+  music.src = song.path;
+  title.textContent = song.displayName;
+  image.src = song.cover;
+  background.src = song.cover;
+}
