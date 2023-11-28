@@ -35,3 +35,11 @@ const songs = [
 
 let musicIndex = 0;
 let isPlaying = false;
+
+function togglePlay() {
+  if (isPlaying) {
+    pauseMusic();
+  } else {
+    playMusic();
+  }
+}
