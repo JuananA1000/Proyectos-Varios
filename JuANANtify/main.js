@@ -90,3 +90,14 @@ function setProgressBar(event) {
   const clickX = event.offsetX;
   music.currentTime = clickX / width + music.duration;
 }
+
+playBtn.addEventListener('click', togglePlay);
+prevBtn.addEventListener('click', () => changeMusic(-1));
+nextBtn.addEventListener('click', () => changeMusic(1));
+
+music.addEventListener('ended', () => changeMusic(1));
+music.addEventListener('timeupdate', updateProgressBar);
+
+playerProgress.addEventListener('click', setProgressBar);
+
+loadMusic(songs[musicIndex])
