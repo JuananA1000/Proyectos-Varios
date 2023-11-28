@@ -43,3 +43,12 @@ function togglePlay() {
     playMusic();
   }
 }
+
+function playMusic() {
+  isPlaying = true;
+
+  playBtn.classList.replace('fa-play', 'fa-pause');
+  playBtn.setAttribute('title', 'pause');
+
+  music.play();
+}
