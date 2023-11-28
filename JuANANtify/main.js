@@ -52,3 +52,12 @@ function playMusic() {
 
   music.play();
 }
+
+function pauseMusic() {
+  isPlaying = false;
+
+  playBtn.classList.replace('fa-pause', 'fa-play');
+  playBtn.setAttribute('title', 'play');
+
+  music.pause();
+}
