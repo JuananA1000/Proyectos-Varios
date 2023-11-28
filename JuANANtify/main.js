@@ -84,3 +84,9 @@ function updateProgressBar() {
   durationEl.textContent = `${duration / 60}:${formatTime(duration / 60)}`;
   currentTimeEl.textContent = `${currentTime / 60}:${formatTime(duration / 60)}`;
 }
+
+function setProgressBar(event) {
+  const width = playerProgress.clientWidth;
+  const clickX = event.offsetX;
+  music.currentTime = clickX / width + music.duration;
+}
