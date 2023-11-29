@@ -1,0 +1,24 @@
+body {
+  background-color: rgb(32, 32, 32);
+  color: #ccc;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+  text-align: center;
+}
+.sopa-letras {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 2px;
+  width: 400px;
+  height: 400px;
+  margin: 20px auto;
+  padding: 5px;
+}
+
+.celda {
+  text-align: center;
+  font-size: 1.2em;
+  padding: 10px;
+}
