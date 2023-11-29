@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@600&display=swap');
+
 body {
   background-color: rgb(32, 32, 32);
   color: #ccc;
-  font-family: 'Courier New', Courier, monospace;
+  /* font-family: 'Courier New', Courier, monospace; */
+  font-family: 'Playpen Sans';
 }
 
 h1 {
@@ -20,12 +23,12 @@ h1 {
 .celda {
   text-align: center;
   font-size: 1.2em;
-  padding: 10px;
+  padding: 7px;
   position: relative;
 }
 
 .resaltado::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
