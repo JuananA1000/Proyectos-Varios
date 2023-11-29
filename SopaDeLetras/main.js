@@ -20,7 +20,7 @@ function inicializarSopaLetras() {
     for (let j = 0; j < 10; j++) {
       // Generamos letras aleatorias
       matriz[i][j] = letras.charAt(Math.floor(Math.random() * letras.length));
-      // PENDIENTE: que las palabras de arriba se crucen por letras similares
+      // PENDIENTE: Haz que las palabras de arriba se crucen por letras similares
     }
   }
   return matriz;
@@ -91,8 +91,13 @@ function insertarTodasPalabras() {
       celda.textContent = matrizSopaLetras[i][j];
       celda.addEventListener('click', resaltarLetra);
       /*
-        Al pasar el ratón, que el vento se mantenga y aparezcan arriba las letras que se toquen, al volver a hacer click
-        el evento se elimina
+        PENDIENTE: Al pasar el ratón, que el evento se mantenga y, al ir pasando por encima de cada una de las letras
+        sucederán dos cosas:
+
+        - Las letras se irán subrayando y coloreando de color rojo.
+        - Aparecerán arriba las letras que se toquen, formando la palabra.
+        
+        Al volver a hacer click el evento se cancela
       */
       celda.addEventListener('mouseleave', quitarResaltado);
       sopaLetras.appendChild(celda);
