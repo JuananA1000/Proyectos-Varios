@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@700&display=swap');
 
 body {
   background-color: rgb(32, 32, 32);
   color: #ccc;
-  /* font-family: 'Courier New', Courier, monospace; */
   font-family: 'Playpen Sans';
 }
 
 h1 {
   text-align: center;
 }
+
 .sopa-letras {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
