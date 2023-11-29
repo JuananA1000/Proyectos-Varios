@@ -12,18 +12,15 @@ function aMayusculas(array) {
   return array;
 }
 
-// Función para generar una letra aleatoria
-function letraAleatoria() {
-  return letras.charAt(Math.floor(Math.random() * letras.length));
-}
-
 // Función para inicializar la matriz de sopa de letras
 function inicializarSopaLetras() {
   const matriz = [];
   for (let i = 0; i < 10; i++) {
     matriz[i] = [];
     for (let j = 0; j < 10; j++) {
-      matriz[i][j] = letraAleatoria();
+      // Generamos letras aleatorias
+      matriz[i][j] = letras.charAt(Math.floor(Math.random() * letras.length));
+      // PENDIENTE: que las palabras de arriba se crucen por letras similares
     }
   }
   return matriz;
