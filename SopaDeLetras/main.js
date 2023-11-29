@@ -2,7 +2,7 @@ const palabras = ['marzo', 'gazpacho', 'calvario'];
 const sopaLetras = document.getElementById('sopaLetras');
 const letras = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ';
 
-// Pasamos las palabras del array a mayusculas 
+// Pasamos las palabras del array a mayusculas
 function aMayusculas(array) {
   for (let i = 0; i < array.length; i++) {
     if (array[i] === array[i].toLowerCase()) {
@@ -31,19 +31,18 @@ function inicializarSopaLetras() {
 
 // Función para insertar una palabra en una dirección específica
 function insertarPalabra(matriz, palabra, direccion, fila, columna) {
-  const len = palabra.length;
   let esPosibleInsertar = true;
 
   if (
-    (direccion === 'horizontal' && columna + len > 10) ||
-    (direccion === 'vertical' && fila + len > 10) ||
-    (direccion === 'diagonal' && (fila + len > 10 || columna + len > 10))
+    (direccion === 'horizontal' && columna + palabra.length > 10) ||
+    (direccion === 'vertical' && fila + palabra.length > 10) ||
+    (direccion === 'diagonal' && (fila + palabra.length > 10 || columna + palabra.length > 10))
   ) {
     esPosibleInsertar = false;
   }
 
   if (esPosibleInsertar) {
-    for (let i = 0; i < len; i++) {
+    for (let i = 0; i < palabra.length; i++) {
       if (direccion === 'horizontal') {
         matriz[fila][columna + i] = palabra.charAt(i);
       } else if (direccion === 'vertical') {
@@ -57,9 +56,23 @@ function insertarPalabra(matriz, palabra, direccion, fila, columna) {
   return false;
 }
 
+// Función para resaltar la letra al hacer clic
+function resaltarLetra(event) {
+  const celda = event.target;
+  celda.classList.add('resaltado');
+  console.log('Resaltar: ', celda);
+}
+
+// Función para quitar el resaltado de la letra
+function quitarResaltado(event) {
+  const celda = event.target;
+  celda.classList.remove('resaltado');
+  console.log('Quitar: ', celda);
+}
+
 // Función para insertar todas las palabras en la sopa de letras
 function insertarTodasPalabras() {
-  aMayusculas(palabras);
+  // aMayusculas(palabras);
   let matrizSopaLetras = inicializarSopaLetras();
 
   palabras.forEach((palabra) => {
@@ -76,9 +89,15 @@ function insertarTodasPalabras() {
   // Mostrar la sopa de letras en el HTML
   for (let i = 0; i < 10; i++) {
     for (let j = 0; j < 10; j++) {
-      const celda = document.createElement('div');
+      let celda = document.createElement('div');
       celda.classList.add('celda');
       celda.textContent = matrizSopaLetras[i][j];
+      celda.addEventListener('click', resaltarLetra);
+      /*
+        Al pasar el ratón, que el vento se mantenga y aparezcan arriba las letras que se toquen, al volver a hacer click
+        el evento se elimina
+      */
+      celda.addEventListener('mouseleave', quitarResaltado);
       sopaLetras.appendChild(celda);
     }
   }
