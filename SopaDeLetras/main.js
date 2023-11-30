@@ -91,10 +91,17 @@ function insertarTodasPalabras() {
       celda.textContent = matrizSopaLetras[i][j];
       celda.addEventListener('click', resaltarLetra);
       /*
+<<<<<<< HEAD
         PENDIENTE: Al pasar el ratón, que el evento se mantenga y, al ir pasando por encima de cada una de las letras
         sucederán dos cosas:
 
         - Las letras se irán subrayando y coloreando de color rojo.
+=======
+        PENDIENTE: Al pasar el ratón, que el evento se mantenga y, al ir pasando por encima e cada una de las letras pasarán dos
+        cosas:
+
+        - Las letras se irán subrayando y coloreando del color de la clase .resaltado.
+>>>>>>> ba0671376f0b8edf2549ed706097ad0d04e8cd57
         - Aparecerán arriba las letras que se toquen, formando la palabra.
         
         Al volver a hacer click el evento se cancela
