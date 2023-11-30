@@ -1,6 +1,6 @@
 const palabras = ['marzo', 'gazpacho', 'calvario'];
 const sopaLetras = document.getElementById('sopaLetras');
-const letras = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ';
+const letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 // Pasamos las palabras del array a mayusculas
 function aMayusculas(array) {
@@ -15,12 +15,13 @@ function aMayusculas(array) {
 // Función para inicializar la matriz de sopa de letras
 function inicializarSopaLetras() {
   const matriz = [];
+
   for (let i = 0; i < 10; i++) {
     matriz[i] = [];
     for (let j = 0; j < 10; j++) {
       // Generamos letras aleatorias
       matriz[i][j] = letras.charAt(Math.floor(Math.random() * letras.length));
-      // PENDIENTE: Haz que las palabras de arriba se crucen por letras similares
+      // PENDIENTE: Haz que las palabras del array tengan letras similares, estas se crucen unicamente por esas letras.
     }
   }
   return matriz;
