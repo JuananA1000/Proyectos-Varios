@@ -27,3 +27,8 @@ function updateStats() {
   document.querySelector('#heads-count').textContent = `Heads: ${heads}`;
   document.querySelector('#tails-count').textContent = `Tails: ${tails}`;
 }
+
+function disableButton() {
+  flipBtn.disabled = true;
+  setTimeout(() => (flipBtn.disabled = false), 3000);
+}
