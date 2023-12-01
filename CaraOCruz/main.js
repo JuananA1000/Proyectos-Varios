@@ -23,6 +23,13 @@ flipBtn.addEventListener('click', () => {
   disableButton();
 });
 
+resetBtn.addEventListener('click', () => {
+  coin.style.animation = 'none';
+  tails = 0;
+  heads = 0;
+  updateStats();
+});
+
 function updateStats() {
   document.querySelector('#heads-count').textContent = `Caras: ${heads}`;
   document.querySelector('#tails-count').textContent = `Cruces: ${tails}`;
@@ -32,10 +39,3 @@ function disableButton() {
   flipBtn.disabled = true;
   setTimeout(() => (flipBtn.disabled = false), 3000);
 }
-
-resetBtn.addEventListener('click', () => {
-  coin.style.animation = 'none';
-  tails = 0;
-  heads = 0;
-  updateStats();
-});
