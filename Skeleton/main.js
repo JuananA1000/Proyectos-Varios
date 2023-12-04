@@ -1,6 +1,9 @@
 const allLoadings = document.querySelectorAll('.loading');
 const toggle = document.getElementById('toggle').addEventListener('click', toggleDarkMode);
 
+// IDEA: Añadir tooltip al boton de darkmode
+// PENDIENTE: Ensanchar espacio de foto, porque se corta
+
 function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');
 
