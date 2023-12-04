@@ -7,3 +7,5 @@ function toggleDarkMode() {
   const isDarkModeEnabled = document.body.classList.contains('dark-mode');
   localStorage.setItem('darkmode', isDarkModeEnabled);
 }
+
+toggle.addEventListener('click', toggleDarkMode);
