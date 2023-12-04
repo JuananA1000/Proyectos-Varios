@@ -1,5 +1,5 @@
 const allLoadings = document.querySelectorAll('.loading');
-const toggle = document.getElementById('toggle');
+const toggle = document.getElementById('toggle').addEventListener('click', toggleDarkMode);
 
 function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');
@@ -7,8 +7,6 @@ function toggleDarkMode() {
   const isDarkModeEnabled = document.body.classList.contains('dark-mode');
   localStorage.setItem('darkmode', isDarkModeEnabled);
 }
-
-toggle.addEventListener('click', toggleDarkMode);
 
 window.addEventListener('load', () => {
   const isDarkModeEnabled = localStorage.getItem('darkmode');
