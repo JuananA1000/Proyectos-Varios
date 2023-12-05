@@ -23,3 +23,13 @@ let topOffset = 40;
 let leftOffset = 33;
 
 let score = 0;
+
+// Array de ladrillos
+let bricks = [];
+
+for (let i = 0; i < columnCount; i++) {
+  bricks[i] = [];
+  for (let j = 0; j < rowCount; j++) {
+    bricks[i][j] = { x: 0, y: 0, status: 1 };
+  }
+}
