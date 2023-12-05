@@ -72,7 +72,7 @@ function drawBricks() {
         let brickY = j * (brickHeight + brickPadding) + topOffset;
         bricks[i][j].x = brickX;
         bricks[i][j].y = brickY;
-        
+
         ctx.beginPath();
         ctx.roundRect(brickX, brickY, brickWidth, brickHeight, 30);
         ctx.fillStyle = '#33333';
@@ -81,5 +81,11 @@ function drawBricks() {
       }
     }
   }
+}
 
+// Puntuación
+function trackScore() {
+  ctx.font = 'bold 16px sans-serif';
+  ctx.fillStyle = '#333333';
+  ctx.fillText('Score: ' + score, 8, 24);
 }
