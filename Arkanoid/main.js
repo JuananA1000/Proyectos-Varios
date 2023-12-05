@@ -62,3 +62,24 @@ function drawBall() {
   ctx.fill();
   ctx.closePath();
 }
+
+// Dibujar ladrillos
+function drawBricks() {
+  for (let i = 0; i < columnCount; i++) {
+    for (let j = 0; j < rowCount; j++) {
+      if (bricks[i][j].status === 1) {
+        let brickX = i * (brickWidth + brickPadding) + leftOffset;
+        let brickY = j * (brickHeight + brickPadding) + topOffset;
+        bricks[i][j].x = brickX;
+        bricks[i][j].y = brickY;
+        
+        ctx.beginPath();
+        ctx.roundRect(brickX, brickY, brickWidth, brickHeight, 30);
+        ctx.fillStyle = '#33333';
+        ctx.fill();
+        ctx.closePath();
+      }
+    }
+  }
+
+}
