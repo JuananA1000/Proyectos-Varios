@@ -8,7 +8,10 @@
 }
 
 h1 {
-  font-size: 36pt;
+  background: linear-gradient(to left, #575ce5 50%, #f9fbfc 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
   text-align: center;
 }
 
