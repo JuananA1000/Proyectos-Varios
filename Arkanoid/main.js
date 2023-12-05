@@ -44,3 +44,12 @@ function mouseMoveHandler(event) {
     paddleX = relativeX - paddleWidth / 2;
   }
 }
+
+// Dibujar barra
+function drawPaddle() {
+  ctx.beginPath();
+  ctx.roundRect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight, 30);
+  ctx.fillStyle = '#33333';
+  ctx.fill();
+  ctx.closePath();
+}
