@@ -33,3 +33,14 @@ for (let i = 0; i < columnCount; i++) {
     bricks[i][j] = { x: 0, y: 0, status: 1 };
   }
 }
+
+// Eventos del ratón
+document.addEventListener('mousemove', mouseMoveHandler, false);
+
+function mouseMoveHandler(event) {
+  let relativeX = e.clientX - canvas.offsetLeft;
+
+  if (relativeX > 0 && relativeX < canvas.width) {
+    paddleX = relativeX - paddleWidth / 2;
+  }
+}
