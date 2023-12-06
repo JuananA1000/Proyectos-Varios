@@ -1,9 +1,3 @@
-const style = document.createElement('style');
-style.innerHTML = `
-  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-`;
-document.head.appendChild(style);
-
 let canvas = document.getElementById('game');
 let ctx = canvas.getContext('2d');
 
@@ -103,6 +97,32 @@ function trackScore() {
   });
 }
 
+// PENDIENTE: Este popup se mostrará al PERDER la partida y PAUSAR el juego
+// PENDIENTE: Crear funcion para PAUSAR el juego
+function showCenteredAlert() {
+  const popup = document.createElement('div');
+  popup.textContent = '¡Alerta centrada!';
+  popup.style.position = 'fixed';
+  popup.style.top = '50%';
+  popup.style.left = '50%';
+  popup.style.transform = 'translate(-50%, -50%)';
+  popup.style.backgroundColor = 'white';
+  popup.style.padding = '20px';
+  popup.style.border = '1px solid #ccc';
+
+  // const restartButton = document.createElement('button');
+  // restartButton.textContent = 'Reiniciar';
+  // restartButton.addEventListener('click', document.body.removeChild(popup));
+
+  popup.appendChild(restartButton);
+  document.body.appendChild(popup);
+
+  // Eliminar la ventana emergente después de cierto tiempo (ejemplo: 3 segundos)
+  setTimeout(() => {
+    document.body.removeChild(popup);
+  }, 3000);
+}
+
 // Comprobar si la bola golpea a los ladrillos
 function hitDetection() {
   for (let i = 0; i < columnCount; i++) {
@@ -150,6 +170,7 @@ function main() {
       dy = -dy;
     } else {
       // Si la bola no golpea la barra
+      // showCenteredAlert();
       alert('¡¡GAME OVER!!');
       document.location.reload();
     }
