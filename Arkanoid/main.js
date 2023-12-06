@@ -37,7 +37,7 @@ for (let i = 0; i < columnCount; i++) {
 // Eventos del ratón
 document.addEventListener('mousemove', mouseMoveHandler, false);
 
-function mouseMoveHandler(event) {
+function mouseMoveHandler(e) {
   let relativeX = e.clientX - canvas.offsetLeft;
 
   if (relativeX > 0 && relativeX < canvas.width) {
@@ -87,5 +87,30 @@ function drawBricks() {
 function trackScore() {
   ctx.font = 'bold 16px sans-serif';
   ctx.fillStyle = '#333333';
-  ctx.fillText('Score: ' + score, 8, 24);
+  ctx.fillText('Puntos: ' + score, 8, 24);
+}
+
+// Comprobar si la bola golpea a los ladrillos
+function hitDetection() {
+  for (let i = 0; i < columnCount; i++) {
+    for (let j = 0; j < rowCount; j++) {
+      if (bricks[i][j].status === 1) {
+        if (
+          x > bricks[i][j].x &&
+          x < bricks[i][j].x + brickWidth &&
+          y > bricks[i][j].y &&
+          y < bricks[i][j].y + brickHeight
+        ) {
+          dy = -dy;
+          bricks[i][j].status = 0;
+          score++;
+
+          if (score === rowCount * columnCount) {
+            alert('¡¡VICTORIA!!');
+            document.location.reload(); // Creo que esto vale para refrescar el navegador
+          }
+        }
+      }
+    }
+  }
 }
