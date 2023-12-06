@@ -151,3 +151,5 @@ function main() {
   x += dx;
   y += dy;
 }
+
+setInterval(main, 10);
