@@ -1,3 +1,9 @@
+const style = document.createElement('style');
+style.innerHTML = `
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+`;
+document.head.appendChild(style);
+
 let canvas = document.getElementById('game');
 let ctx = canvas.getContext('2d');
 
@@ -87,7 +93,14 @@ function drawBricks() {
 function trackScore() {
   ctx.font = 'bold 16px sans-serif';
   ctx.fillStyle = '#333333';
-  ctx.fillText('Puntos: ' + score, 8, 24);
+
+  document.fonts.load('10px "Press Start 2P"').then(() => {
+    // Establecer la fuente en el contexto
+    ctx.font = '10px "Press Start 2P"';
+
+    // Dibujar el texto con la nueva fuente
+    ctx.fillText('Puntos: ' + score, 8, 24);
+  });
 }
 
 // Comprobar si la bola golpea a los ladrillos
