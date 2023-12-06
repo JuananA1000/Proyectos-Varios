@@ -1,5 +1,5 @@
 let canvas = document.getElementById('game');
-let ctx = canvas.getContext('2D');
+let ctx = canvas.getContext('2d');
 
 let ballRadius = 9;
 let x = canvas.width / (Math.floor(Math.random() * Math.random() * 10) + 3);
