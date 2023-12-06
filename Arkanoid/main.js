@@ -114,3 +114,40 @@ function hitDetection() {
     }
   }
 }
+
+function main() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  trackScore();
+  drawBricks();
+  drawBall();
+  drawPaddle();
+  hitDetection();
+
+  // Detectar paredes laterales
+  if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
+    dx = -dx;
+  }
+
+  // Detectar pared superior
+  if (y + dy < ballRadius) {
+    dy = -dy;
+  } else if (y + dy > canvas.height - ballRadius) {
+    // Detectar golpe con la barra
+    if (x > paddleX && x < paddleX + paddleWidth) {
+      dy = -dy;
+    } else {
+      // Si la bola no golpea la barra
+      alert('¡¡GAME OVER!!');
+      document.location.reload();
+    }
+  }
+
+  // Detectar pared inferior
+  if (y + dy > canvas.height - ballRadius || y + dy < ballRadius) {
+    dy = -dy;
+  }
+
+  // Mover bola
+  x += dx;
+  y += dy;
+}
