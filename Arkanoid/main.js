@@ -117,11 +117,6 @@ function showCenteredAlert(msg) {
 
   // Agregar el div al cuerpo del documento
   document.body.appendChild(popup);
-
-  // Eliminar la ventana emergente después de cierto tiempo (ejemplo: 3 segundos)
-  // setTimeout(() => {
-  //   document.body.removeChild(popup);
-  // }, 3000);
 }
 
 // Comprobar si la bola golpea a los ladrillos
@@ -149,42 +144,62 @@ function hitDetection() {
   }
 }
 
-function main() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  trackScore();
-  drawBricks();
-  drawBall();
-  drawPaddle();
-  hitDetection();
+// Evento para pausar/reanudar el juego con la tecla 'p'
+let isPaused = false;
 
-  // Detectar paredes laterales
-  if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
-    dx = -dx;
-  }
-
-  // Detectar pared superior
-  if (y + dy < ballRadius) {
-    dy = -dy;
-  } else if (y + dy > canvas.height - ballRadius) {
-    // Detectar golpe con la barra
-    if (x > paddleX && x < paddleX + paddleWidth) {
-      dy = -dy;
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'p' || event.key === 'P') {
+    isPaused = !isPaused;
+    if (isPaused) {
+      showCenteredAlert('Pausa');
     } else {
-      // Si la bola no golpea la barra
-      showCenteredAlert('¡¡GAME OVER!!');
-      // alert('¡¡GAME OVER!!');
-      document.location.reload();
+      // Eliminar la ventana emergente de pausa
+      const popup = document.querySelector('div');
+      if (popup) {
+        document.body.removeChild(popup);
+      }
+    }pp
+  }
+});
+
+function main() {
+  if (!isPaused) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    trackScore();
+    drawBricks();
+    drawBall();
+    drawPaddle();
+    hitDetection();
+
+    // Detectar paredespp laterales
+    if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
+      dx = -dx;
     }
-  }
 
-  // Detectar pared inferior
-  if (y + dy > canvas.height - ballRadius || y + dy < ballRadius) {
-    dy = -dy;
-  }
+    // Detectar pared superior
+    if (y + dy < ballRadius) {
+      dy = -dy;
+    } else if (y + dy > canvas.height - ballRadius) {
+      // Detectar golpe con la barra
+      if (x > paddleX && x < paddleX + paddleWidth) {
+        dy = -dy;
+      } else {
+        // Si la bola no golpea la barra
+        showCenteredAlert('¡¡GAME OVER!!');
+        // alert('¡¡GAME OVER!!');
+        document.location.reload();
+      }
+    }
 
-  // Mover bola
-  x += dx;
-  y += dy;
+    // Detectar pared inferior
+    if (y + dy > canvas.height - ballRadius || y + dy < ballRadius) {
+      dy = -dy;
+    }
+
+    // Mover bola
+    x += dx;
+    y += dy;
+  }
 }
 
 setInterval(main, 10);
