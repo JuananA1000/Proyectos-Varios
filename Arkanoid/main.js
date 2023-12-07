@@ -99,9 +99,10 @@ function trackScore() {
 
 // PENDIENTE: Este popup se mostrará al PERDER la partida y PAUSAR el juego
 // PENDIENTE: Crear funcion para PAUSAR el juego
-function showCenteredAlert() {
+function showCenteredAlert(msg) {
+  // Crear un div para la ventana emergente
   const popup = document.createElement('div');
-  popup.textContent = '¡Alerta centrada!';
+  popup.textContent = msg;
   popup.style.position = 'fixed';
   popup.style.top = '50%';
   popup.style.left = '50%';
@@ -110,17 +111,17 @@ function showCenteredAlert() {
   popup.style.padding = '20px';
   popup.style.border = '1px solid #ccc';
 
-  // const restartButton = document.createElement('button');
-  // restartButton.textContent = 'Reiniciar';
-  // restartButton.addEventListener('click', document.body.removeChild(popup));
+  const retryButton = document.createElement('button');
+  retryButton.textContent = 'Reintentar';
+  popup.appendChild(retryButton);
 
-  popup.appendChild(restartButton);
+  // Agregar el div al cuerpo del documento
   document.body.appendChild(popup);
 
   // Eliminar la ventana emergente después de cierto tiempo (ejemplo: 3 segundos)
-  setTimeout(() => {
-    document.body.removeChild(popup);
-  }, 3000);
+  // setTimeout(() => {
+  //   document.body.removeChild(popup);
+  // }, 3000);
 }
 
 // Comprobar si la bola golpea a los ladrillos
@@ -170,8 +171,8 @@ function main() {
       dy = -dy;
     } else {
       // Si la bola no golpea la barra
-      // showCenteredAlert();
-      alert('¡¡GAME OVER!!');
+      showCenteredAlert('¡¡GAME OVER!!');
+      // alert('¡¡GAME OVER!!');
       document.location.reload();
     }
   }
