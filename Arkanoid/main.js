@@ -111,10 +111,6 @@ function showCenteredAlert(msg) {
   popup.style.padding = '20px';
   popup.style.border = '1px solid #ccc';
 
-  const retryButton = document.createElement('button');
-  retryButton.textContent = 'Reintentar';
-  popup.appendChild(retryButton);
-
   // Agregar el div al cuerpo del documento
   document.body.appendChild(popup);
 }
@@ -158,7 +154,7 @@ document.addEventListener('keydown', function (event) {
       if (popup) {
         document.body.removeChild(popup);
       }
-    }pp
+    }
   }
 });
 
