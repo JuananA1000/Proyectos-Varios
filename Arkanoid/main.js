@@ -97,8 +97,6 @@ function trackScore() {
   });
 }
 
-// PENDIENTE: Este popup se mostrará al PERDER la partida y PAUSAR el juego
-// PENDIENTE: Crear funcion para PAUSAR el juego
 function showCenteredAlert(msg) {
   // Crear un div para la ventana emergente
   const popup = document.createElement('div');
@@ -180,9 +178,12 @@ function main() {
       if (x > paddleX && x < paddleX + paddleWidth) {
         dy = -dy;
       } else {
-        // Si la bola no golpea la barra
-        showCenteredAlert('¡¡GAME OVER!!');
-        // alert('¡¡GAME OVER!!');
+        /*
+          PENDIENTE: Si la bola no golpea la barra:
+          showCenteredAlert('¡¡GAME OVER!!');
+          y pausamos el juego.
+        */
+        alert('¡¡GAME OVER!!'); // Eliminar esto después
         document.location.reload();
       }
     }
