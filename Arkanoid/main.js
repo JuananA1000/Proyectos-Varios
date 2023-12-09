@@ -35,8 +35,7 @@ document.addEventListener('keydown', function (event) {
     isPaused = !isPaused;
     if (isPaused) {
       showCenteredAlert('En Pausa');
-      parpadear('vuelve a pulsar P para reanudar')
-
+      parpadear('vuelve a pulsar P para reanudar');
     } else {
       // Eliminar la ventana emergente de pausa
       const popup = document.querySelector('div');
@@ -118,7 +117,6 @@ function drawBricks() {
 }
 
 function parpadear(msg) {
-  // let elemento = document.getElementById('parpadeoTexto');
   const elemento = document.createElement('p');
   elemento.textContent = msg;
   elemento.style.position = 'fixed';
@@ -131,14 +129,14 @@ function parpadear(msg) {
   document.body.appendChild(elemento);
   let visible = true;
 
-  setInterval(function() {
-      if (visible) {
-          elemento.textContent = '';
-      } else {
-          elemento.textContent = msg;
-      }
-      visible = !visible;
-  }, 500); // Cambia el tiempo de parpadeo ajustando el valor en milisegundos (500 = medio segundo)
+  setInterval(function () {
+    if (visible) {
+      elemento.textContent = '';
+    } else {
+      elemento.textContent = msg;
+    }
+    visible = !visible;
+  }, 500);
 }
 
 // Puntuación
@@ -219,7 +217,7 @@ function main() {
         dy = -dy;
       } else {
         showCenteredAlert('¡¡AGUR MINGAFRÍA!!');
-        parpadear('pulsa R para reiniciar')
+        parpadear('pulsa R para reiniciar');
         isPaused = true;
       }
     }
