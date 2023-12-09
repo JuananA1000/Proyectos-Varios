@@ -24,6 +24,9 @@ let leftOffset = 33;
 
 let score = 0;
 
+// Pausar/reanudar el juego
+let isPaused = false;
+
 // Array de ladrillos
 let bricks = [];
 
@@ -138,20 +141,27 @@ function hitDetection() {
   }
 }
 
-// Evento para pausar/reanudar el juego con la tecla 'p'
-let isPaused = false;
-
 document.addEventListener('keydown', function (event) {
   if (event.key === 'p' || event.key === 'P') {
     isPaused = !isPaused;
     if (isPaused) {
-      showCenteredAlert('Pausa');
+      showCenteredAlert('Pausa, vuelve a pulsar P para reanudar');
     } else {
       // Eliminar la ventana emergente de pausa
       const popup = document.querySelector('div');
       if (popup) {
         document.body.removeChild(popup);
       }
+    }
+  }
+});
+
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'r' || event.key === 'R') {
+    const popup = document.querySelector('div');
+    if (popup) {
+      document.body.removeChild(popup);
+      document.location.reload();
     }
   }
 });
@@ -178,13 +188,8 @@ function main() {
       if (x > paddleX && x < paddleX + paddleWidth) {
         dy = -dy;
       } else {
-        /*
-          PENDIENTE: Si la bola no golpea la barra:
-          showCenteredAlert('¡¡GAME OVER!!');
-          y pausamos el juego.
-        */
-        alert('¡¡GAME OVER!!'); // Eliminar esto después
-        document.location.reload();
+        showCenteredAlert('¡¡GAME OVER!! pulsa R para reiniciar');
+        isPaused = true;
       }
     }
 
