@@ -56,10 +56,6 @@ document.addEventListener('keydown', function (event) {
   }
 });
 
-/* 
-  PENDIENTE: los mensajes "vuelve a pulsar P para reanudar" y "pulsa R para reiniciar", aparecerán debajo de los
-  letreros principales parpadeando.
-*/
 // Array de ladrillos
 let bricks = [];
 
@@ -185,8 +181,11 @@ function hitDetection() {
           score++;
 
           if (score === rowCount * columnCount) {
-            alert('¡¡VICTORIA!!');
-            document.location.reload(); // Creo que esto vale para refrescar el navegador
+            // alert('¡¡VICTORIA!!');
+            // document.location.reload(); // Creo que esto vale para refrescar el navegador
+            showCenteredAlert('¡¡VICTORIA!!');
+            parpadear('pulsa R para reiniciar');
+            isPaused = true;
           }
         }
       }
@@ -216,7 +215,7 @@ function main() {
       if (x > paddleX && x < paddleX + paddleWidth) {
         dy = -dy;
       } else {
-        showCenteredAlert('¡¡AGUR MINGAFRÍA!!');
+        showCenteredAlert('¡¡GAME OVER!!');
         parpadear('pulsa R para reiniciar');
         isPaused = true;
       }
