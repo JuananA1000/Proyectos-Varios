@@ -27,6 +27,40 @@ let score = 0;
 // Pausar/reanudar el juego
 let isPaused = false;
 
+// Eventos del ratón
+document.addEventListener('mousemove', mouseMoveHandler, false);
+
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'p' || event.key === 'P') {
+    isPaused = !isPaused;
+    if (isPaused) {
+      showCenteredAlert('En Pausa');
+      parpadear('vuelve a pulsar P para reanudar')
+
+    } else {
+      // Eliminar la ventana emergente de pausa
+      const popup = document.querySelector('div');
+      if (popup) {
+        document.body.removeChild(popup);
+      }
+    }
+  }
+});
+
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'r' || event.key === 'R') {
+    const popup = document.querySelector('div');
+    if (popup) {
+      document.body.removeChild(popup);
+      document.location.reload();
+    }
+  }
+});
+
+/* 
+  PENDIENTE: los mensajes "vuelve a pulsar P para reanudar" y "pulsa R para reiniciar", aparecerán debajo de los
+  letreros principales parpadeando.
+*/
 // Array de ladrillos
 let bricks = [];
 
@@ -36,9 +70,6 @@ for (let i = 0; i < columnCount; i++) {
     bricks[i][j] = { x: 0, y: 0, status: 1 };
   }
 }
-
-// Eventos del ratón
-document.addEventListener('mousemove', mouseMoveHandler, false);
 
 function mouseMoveHandler(e) {
   let relativeX = e.clientX - canvas.offsetLeft;
@@ -86,6 +117,30 @@ function drawBricks() {
   }
 }
 
+function parpadear(msg) {
+  // let elemento = document.getElementById('parpadeoTexto');
+  const elemento = document.createElement('p');
+  elemento.textContent = msg;
+  elemento.style.position = 'fixed';
+  elemento.style.top = '50%';
+  elemento.style.left = '50%';
+  elemento.style.marginTop = '30px';
+  elemento.style.transform = 'translate(-50%, -50%)';
+  elemento.style.color = 'red';
+
+  document.body.appendChild(elemento);
+  let visible = true;
+
+  setInterval(function() {
+      if (visible) {
+          elemento.textContent = '';
+      } else {
+          elemento.textContent = msg;
+      }
+      visible = !visible;
+  }, 500); // Cambia el tiempo de parpadeo ajustando el valor en milisegundos (500 = medio segundo)
+}
+
 // Puntuación
 function trackScore() {
   ctx.font = 'bold 16px sans-serif';
@@ -108,7 +163,7 @@ function showCenteredAlert(msg) {
   popup.style.top = '50%';
   popup.style.left = '50%';
   popup.style.transform = 'translate(-50%, -50%)';
-  popup.style.backgroundColor = 'white';
+  popup.style.color = 'red';
   popup.style.padding = '20px';
   popup.style.border = '1px solid #ccc';
 
@@ -141,31 +196,6 @@ function hitDetection() {
   }
 }
 
-document.addEventListener('keydown', function (event) {
-  if (event.key === 'p' || event.key === 'P') {
-    isPaused = !isPaused;
-    if (isPaused) {
-      showCenteredAlert('Pausa, vuelve a pulsar P para reanudar');
-    } else {
-      // Eliminar la ventana emergente de pausa
-      const popup = document.querySelector('div');
-      if (popup) {
-        document.body.removeChild(popup);
-      }
-    }
-  }
-});
-
-document.addEventListener('keydown', function (event) {
-  if (event.key === 'r' || event.key === 'R') {
-    const popup = document.querySelector('div');
-    if (popup) {
-      document.body.removeChild(popup);
-      document.location.reload();
-    }
-  }
-});
-
 function main() {
   if (!isPaused) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -188,7 +218,8 @@ function main() {
       if (x > paddleX && x < paddleX + paddleWidth) {
         dy = -dy;
       } else {
-        showCenteredAlert('¡¡GAME OVER!! pulsa R para reiniciar');
+        showCenteredAlert('¡¡AGUR MINGAFRÍA!!');
+        parpadear('pulsa R para reiniciar')
         isPaused = true;
       }
     }
