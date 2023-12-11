@@ -76,3 +76,32 @@ function showNotification() {
     notification.classList.remove('show');
   }, 2000);
 }
+
+// Detectar letra pulsada
+window.addEventListener('keydown', (event) => {
+  if (playable) {
+    /* 
+      PENDIENTE: keyCode está deprecado, obsoleto. debemos cambiarlo, ahora es event.key, pero hay que averiguar cómo
+      construir la condición
+    */
+    if (event.keyCode >= 65 && event.keyCode <= 90) {
+      const letra = event.key.toLowerCase();
+
+      if (selectedWord.includes(letra)) {
+        if (!correctLetters.includes(letra)) {
+          correctLetters.push(letra);
+          displayWord();
+        } else {
+          showNotification();
+        }
+      } else {
+        if (!wrongLetters.includes(letra)) {
+          wrongLetters.push(letra);
+          updateWrongLettersEl();
+        } else {
+          showNotification();
+        }
+      }
+    }
+  }
+});
