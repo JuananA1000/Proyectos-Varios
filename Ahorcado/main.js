@@ -10,8 +10,33 @@ const figureParts = document.querySelectorAll('.figure-part');
 const words = ['casa', 'perro', 'gato', 'ordenador', 'teléfono', 'libro', 'jardín', 'nube', 'sol', 'montaña', 'río'];
 
 let selectedWord = words[Math.floor(Math.random() * words.length)];
-let playable =true
+let playable = true;
 
-const correctLetters=[]
-const wrongLetters=[]
+const correctLetters = [];
+const wrongLetters = [];
 
+// Mostrar palabra oculta
+function displayWord() {
+  wordEl.innerHTML = `
+    ${selectedWord
+      .split('')
+      .map(
+        (letter) => `
+          <span class="letter">
+            ${correctLetters.includes(letter) ? letter : ''}
+          </span>
+        `
+      )
+      .join('')}
+  `;
+
+  const innerWord = wordEl.innerText.replace(/[ \n]/g, '');
+
+  if (innerWord === selectedWord) {
+    finalMessage.innerText = '¡¡VICTORIA!!';
+    finalMessageRevealWord.innerText = '';
+    popup.style.display = 'flex';
+
+    playable = false;
+  }
+}
