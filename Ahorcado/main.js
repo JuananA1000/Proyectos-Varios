@@ -21,9 +21,9 @@ function displayWord() {
     ${selectedWord
       .split('')
       .map(
-        (letter) => `
+        (letra) => `
           <span class="letter">
-            ${correctLetters.includes(letter) ? letter : ''}
+            ${correctLetters.includes(letra) ? letra : ''}
           </span>
         `
       )
@@ -35,6 +35,33 @@ function displayWord() {
   if (innerWord === selectedWord) {
     finalMessage.innerText = '¡¡VICTORIA!!';
     finalMessageRevealWord.innerText = '';
+    popup.style.display = 'flex';
+
+    playable = false;
+  }
+}
+
+// Actualizar letras erróneas
+function updateWrongLettersEl() {
+  wrongLettersEl.innerHTML = `
+    ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
+    ${wrongLetters.map((letra) => `${letra}`)}
+  `;
+
+  figureParts.forEach((part, index) => {
+    const errors = wrongLetters.length;
+
+    if (index < errors) {
+      part.style.display = 'block';
+    } else {
+      part.style.display = 'none';
+    }
+  });
+
+  // Comprobar cuando el jugador pierda
+  if (wrongLetters.length === figureParts.length) {
+    finalMessage.innerHTML = 'Has perdido';
+    finalMessageRevealWord.innerHTML = `...la palabra era: ${selectedWord}`;
     popup.style.display = 'flex';
 
     playable = false;
