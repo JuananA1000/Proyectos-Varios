@@ -44,7 +44,7 @@ function displayWord() {
 // Actualizar letras erróneas
 function updateWrongLettersEl() {
   wrongLettersEl.innerHTML = `
-    ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
+    ${wrongLetters.length > 0 ? '<p>Letras incorrectas</p>' : ''}
     ${wrongLetters.map((letra) => `${letra}`)}
   `;
 
