@@ -67,3 +67,12 @@ function updateWrongLettersEl() {
     playable = false;
   }
 }
+
+// Mostrar notificación
+function showNotification() {
+  notification.classList.add('show');
+
+  setTimeout(() => {
+    notification.classList.remove('show');
+  }, 2000);
+}
