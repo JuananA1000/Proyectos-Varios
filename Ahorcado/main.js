@@ -24,7 +24,6 @@ const words = [
   'software',
 ];
 
-
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 let playable = true;
 
@@ -63,8 +62,7 @@ function updateWrongLettersEl() {
   ${wrongLetters.length > 0 ? '<p>Letras incorrectas</p>' : ''}
   ${wrongLetters.map((letra) => `${letra}`)}
   `;
-  
-  // PENDIENTE: Cuando el jugador pierda, se le 'secciona el cuello con una linea diagonal
+
   figureParts.forEach((part, index) => {
     const errors = wrongLetters.length;
 
@@ -118,7 +116,6 @@ window.addEventListener('keydown', (event) => {
     }
   }
 });
-
 
 // Reiniciar juego
 playAgainBtn.addEventListener('click', () => {
