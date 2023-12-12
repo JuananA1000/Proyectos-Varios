@@ -62,7 +62,11 @@ function updateWrongLettersEl() {
   ${wrongLetters.length > 0 ? '<p>Letras incorrectas</p>' : ''}
   ${wrongLetters.map((letra) => `${letra}`)}
   `;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 802d021ee81b0590ff67eb3d4a581bf89130f599
   figureParts.forEach((part, index) => {
     const errors = wrongLetters.length;
 
