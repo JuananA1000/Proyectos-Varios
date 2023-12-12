@@ -64,7 +64,6 @@ function updateWrongLettersEl() {
   ${wrongLetters.map((letra) => `${letra}`)}
   `;
   
-  // PENDIENTE: Cuando el jugador pierda, se le 'secciona el cuello con una linea diagonal
   figureParts.forEach((part, index) => {
     const errors = wrongLetters.length;
 
