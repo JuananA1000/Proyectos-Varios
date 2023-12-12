@@ -7,7 +7,23 @@ const finalMessage = document.getElementById('final-message');
 const finalMessageRevealWord = document.getElementById('final-message-reveal-word');
 
 const figureParts = document.querySelectorAll('.figure-part');
-const words = ['casa', 'perro', 'gato', 'ordenador', 'teléfono', 'libro', 'jardín', 'nube', 'sol', 'montaña', 'río'];
+
+const words = [
+  'algoritmo',
+  'almacenamiento',
+  'api',
+  'ciberseguridad',
+  'codigo',
+  'ciberataque',
+  'criptografia',
+  'hardware',
+  'interfaz',
+  'nube',
+  'programacion',
+  'redes',
+  'software',
+];
+
 
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 let playable = true;
@@ -44,10 +60,11 @@ function displayWord() {
 // Actualizar letras erróneas
 function updateWrongLettersEl() {
   wrongLettersEl.innerHTML = `
-    ${wrongLetters.length > 0 ? '<p>Letras incorrectas</p>' : ''}
-    ${wrongLetters.map((letra) => `${letra}`)}
+  ${wrongLetters.length > 0 ? '<p>Letras incorrectas</p>' : ''}
+  ${wrongLetters.map((letra) => `${letra}`)}
   `;
-
+  
+  // PENDIENTE: Cuando el jugador pierda, se le 'secciona el cuello con una linea diagonal
   figureParts.forEach((part, index) => {
     const errors = wrongLetters.length;
 
@@ -79,32 +96,29 @@ function showNotification() {
 
 // Detectar letra pulsada
 window.addEventListener('keydown', (event) => {
-  if (playable) {
-    /* 
-      PENDIENTE: keyCode está deprecado, obsoleto. debemos cambiarlo, ahora es event.key, pero hay que averiguar cómo
-      construir la condición
-    */
-    if (event.keyCode >= 65 && event.keyCode <= 90) {
-      const letra = event.key.toLowerCase();
+  const isLetter = /^[a-zA-Z]$/i.test(event.key);
 
-      if (selectedWord.includes(letra)) {
-        if (!correctLetters.includes(letra)) {
-          correctLetters.push(letra);
-          displayWord();
-        } else {
-          showNotification();
-        }
+  if (playable && isLetter) {
+    const letra = event.key.toLowerCase();
+
+    if (selectedWord.includes(letra)) {
+      if (!correctLetters.includes(letra)) {
+        correctLetters.push(letra);
+        displayWord();
       } else {
-        if (!wrongLetters.includes(letra)) {
-          wrongLetters.push(letra);
-          updateWrongLettersEl();
-        } else {
-          showNotification();
-        }
+        showNotification();
+      }
+    } else {
+      if (!wrongLetters.includes(letra)) {
+        wrongLetters.push(letra);
+        updateWrongLettersEl();
+      } else {
+        showNotification();
       }
     }
   }
 });
+
 
 // Reiniciar juego
 playAgainBtn.addEventListener('click', () => {
