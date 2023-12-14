@@ -51,3 +51,53 @@ function changeDirection(event) {
 
 // Cambiar dirección
 controls.forEach((button) => button.addEventListener('click', () => changeDirection({ key: button.dataset.key })));
+
+// Funcion InitGame
+function initGame() {
+  if (gameOver) return handleGameOver();
+
+  let html = `<div class='food' style='grid-area: ${foodX}/${foodY}'></div>`;
+
+  // Cuando la serpiente come...
+  if (snakeX === foodX && snakeY === foodY) {
+    updateFoodPosition();
+    snakeBody.push([foodY, foodX]);
+    score++;
+    /*
+      if (score > highScore) {
+        highScore = score;
+      }
+    */
+    highScore = score >= highScore ? score : highScore;
+
+    localStorage.setItem('high-score', highScore);
+    scoreElement.innerText = `Score: ${score}`;
+    highScoreElement.innerText = `High Score: ${highScore}`;
+  }
+
+  // Actualizar cabeza de la serpiente
+  snakeX += velocityX;
+  snakeY += velocityY;
+
+  // Desplazamos una posiciónm hacia delante los elementos en el cuerpo de la serpiente
+  for (let i = snakeBody.length; i > 0; i--) {
+    snakeBody[i] = snakeBody[i - 1];
+  }
+  snakeBody[0] = [snakeX, snakeY];
+
+  // Comprobar si la serpiente está fuera del tablero
+  if (snakeX <= 0 || snakeX > 30 || snakeY <= 0 || snakeY > 30) {
+    return (gameOver = true);
+  }
+
+  // Cuando la serpiente coma, crecerá, añadiendole un cuadrado más
+  for (let i = 0; i < snakeBody.length; i++) {
+    html = `<div class='head' style='grid-area: ${snakeBody[i][1]}/${snakeBody[i][0]}'></div>`;
+
+    // Comprobar si la serpiente choca con su propio cuerpo
+    if (i !== 0 && snakeBody[0][1] === snakeBody[i][1] && snakeBody[0][0] === snakeBody[1][0]) {
+      gameOver = true;
+    }
+  }
+  playBoard.innerHTML=html
+}
