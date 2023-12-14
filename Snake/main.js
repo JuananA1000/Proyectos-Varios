@@ -49,4 +49,5 @@ function changeDirection(event) {
   }
 }
 
-
+// Cambiar dirección
+controls.forEach((button) => button.addEventListener('click', () => changeDirection({ key: button.dataset.key })));
