@@ -24,3 +24,10 @@ function updateFoodPosition() {
   foodX = Math.floor(Math.random() * 30) + 1;
   foodY = Math.floor(Math.random() * 30) + 1;
 }
+
+// Game Over
+function handleGameOver() {
+  clearInterval(setIntervalID)
+  alert('Game Over. Pulsa OK para reiniciar')
+  document.location.reload()
+}
