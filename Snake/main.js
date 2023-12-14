@@ -14,6 +14,12 @@ let snakeBody = [];
 let setIntervalId;
 let score = 0;
 
+// PENDIENTE: Función para pausar el juego asignada a la 'P'
+// PENDIENTE: Eliminar alerts de JS y hacer letreros propios
+// PENDIENTE: Eliminar también las flechas en el HTML
+// PENDIENTE: Hacer el tablero más grande
+// PENDIENTE: Tunning a los colores de la serpiente, lo que sea
+
 // Obtener puntuación del LocalStorage
 let highScore = localStorage.getItem('high-score') || 0;
 highScoreElement.innerText = `Puntuación: ${highScore}`;
