@@ -32,16 +32,16 @@ const handleGameOver = () => {
 
 // Cambiar velocidad
 const changeDirection = (event) => {
-  if (event.key === 'w' ||event.key === 'W' && velocityY != 1) {
+  if (event.key === 'w' || (event.key === 'W' && velocityY != 1)) {
     velocityX = 0;
     velocityY = -1;
-  } else if (event.key === 's' ||event.key === 'S' && velocityY != -1) {
+  } else if (event.key === 's' || (event.key === 'S' && velocityY != -1)) {
     velocityX = 0;
     velocityY = 1;
-  } else if (event.key === 'a' ||event.key === 'A' && velocityX != 1) {
+  } else if (event.key === 'a' || (event.key === 'A' && velocityX != 1)) {
     velocityX = -1;
     velocityY = 0;
-  } else if (event.key === 'd' ||event.key === 'D' && velocityX != -1) {
+  } else if (event.key === 'd' || (event.key === 'D' && velocityX != -1)) {
     velocityX = 1;
     velocityY = 0;
   }
@@ -100,6 +100,11 @@ const initGame = () => {
   playBoard.innerHTML = html;
 };
 
-updateFoodPosition();
-setIntervalId = setInterval(initGame, 100);
-document.addEventListener('keyup', changeDirection);
+function main() {
+  updateFoodPosition();
+  setIntervalId = setInterval(initGame, 100);
+
+  document.addEventListener('keyup', changeDirection);
+}
+
+main();
