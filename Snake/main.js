@@ -20,20 +20,20 @@ let highScore = localStorage.getItem('high-score') || 0;
 highScoreElement.innerText = `Puntuación: ${highScore}`;
 
 // Posición aleatoria de la comida
-function updateFoodPosition() {
+const updateFoodPosition = () => {
   foodX = Math.floor(Math.random() * 30) + 1;
   foodY = Math.floor(Math.random() * 30) + 1;
-}
+};
 
 // Game Over
-function handleGameOver() {
+const handleGameOver= () => {
   clearInterval(setIntervalID);
   alert('Game Over. Pulsa OK para reiniciar');
   document.location.reload();
 }
 
 // Cambiar velocidad
-function changeDirection(event) {
+const changeDirection= (event) => {
   if (event.key === 'ArrowUp' && velocityY != 1) {
     velocityX = 0;
     velocityY = -1;
@@ -53,7 +53,7 @@ function changeDirection(event) {
 controls.forEach((button) => button.addEventListener('click', () => changeDirection({ key: button.dataset.key })));
 
 // Funcion InitGame
-function initGame() {
+const initGame= () => {
   if (gameOver) return handleGameOver();
 
   let html = `<div class='food' style='grid-area: ${foodX}/${foodY}'></div>`;
@@ -99,5 +99,10 @@ function initGame() {
       gameOver = true;
     }
   }
-  playBoard.innerHTML=html
+  playBoard.innerHTML = html;
 }
+
+// Llamada a las funciones
+updateFoodPosition();
+setIntervalID = setInterval(initGame, 100);
+document.addEventListener('keyup', changeDirection);
