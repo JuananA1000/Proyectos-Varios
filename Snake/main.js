@@ -15,3 +15,6 @@ let setIntervalID;
 let score = 0;
 let pause = false;
 
+// Obtener puntuación del LocalStorage
+let highScore = localStorage.getItem('high-score') || 0;
+highScoreElement.innerText = `Puntuación: ${highScore}`;
