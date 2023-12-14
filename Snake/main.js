@@ -18,3 +18,9 @@ let pause = false;
 // Obtener puntuación del LocalStorage
 let highScore = localStorage.getItem('high-score') || 0;
 highScoreElement.innerText = `Puntuación: ${highScore}`;
+
+// Posición aleatoria de la comida
+function updateFoodPosition() {
+  foodX = Math.floor(Math.random() * 30) + 1;
+  foodY = Math.floor(Math.random() * 30) + 1;
+}
