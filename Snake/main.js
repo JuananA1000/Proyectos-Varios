@@ -27,7 +27,26 @@ function updateFoodPosition() {
 
 // Game Over
 function handleGameOver() {
-  clearInterval(setIntervalID)
-  alert('Game Over. Pulsa OK para reiniciar')
-  document.location.reload()
+  clearInterval(setIntervalID);
+  alert('Game Over. Pulsa OK para reiniciar');
+  document.location.reload();
 }
+
+// Cambiar velocidad
+function changeDirection(event) {
+  if (event.key === 'ArrowUp' && velocityY != 1) {
+    velocityX = 0;
+    velocityY = -1;
+  } else if (event.key === 'ArrowDown' && velocityY != -1) {
+    velocityX = 0;
+    velocityY = -1;
+  } else if (event.key === 'ArrowRight' && velocityX != -1) {
+    velocityX = 1;
+    velocityY = 0;
+  } else if (event.key === 'ArrowLeft' && velocityX != 1) {
+    velocityX = -1;
+    velocityY = 0;
+  }
+}
+
+
