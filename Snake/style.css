@@ -10,16 +10,20 @@
 /* Centrar en pantalla */
 body {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   background: #e3f2fd;
 }
 
+h1 {
+  text-align: center;
+}
+
 .wrapper {
-  width: 65vmin;
-  height: 70vmin;
+  width: 75vmin;
+  height: 85vmin;
   display: flex;
   overflow: hidden;
   flex-direction: column;
@@ -54,22 +58,8 @@ body {
   background: #60cbff;
 }
 
-.controls {
-  display: none;
-  justify-content: space-between;
-}
+/* PENDIENTE: Tunning a los colores de la serpiente, lo que sea */
 
-.controls i {
-  padding: 25px 0;
-  text-align: center;
-  font-size: 1.3rem;
-  color: #b8c6dc;
-  width: calc(100% / 4);
-  cursor: pointer;
-  border-right: 1px solid #171b26;
-}
-
-/* PENDIENTE: arreglar ancho de la pantalla */
 @media screen and (max-width: 800px) {
   .wrapper {
     width: 70vmin;

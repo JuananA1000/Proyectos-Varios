@@ -1,7 +1,6 @@
 const playBoard = document.querySelector('.play-board');
 const scoreElement = document.querySelector('.score');
 const highScoreElement = document.querySelector('.high-score');
-const controls = document.querySelectorAll('.controls i');
 
 let gameOver = false;
 let foodX;
@@ -14,11 +13,43 @@ let snakeBody = [];
 let setIntervalId;
 let score = 0;
 
-// PENDIENTE: Función para pausar el juego asignada a la 'P'
-// PENDIENTE: Eliminar alerts de JS y hacer letreros propios
-// PENDIENTE: Eliminar también las flechas en el HTML
-// PENDIENTE: Hacer el tablero más grande
-// PENDIENTE: Tunning a los colores de la serpiente, lo que sea
+let isPaused = false;
+
+document.addEventListener('keyup', (event) => {
+  if (event.key === 'p' || event.key === 'P') {
+    isPaused = !isPaused; // Cambiar el estado de pausa al contrario del actual
+
+    if (isPaused) {
+      clearInterval(setIntervalId); // Pausar el juego al limpiar el intervalo
+      showCenteredAlert('En Pausa');
+      parpadear('vuelve a pulsar P para reanudar');
+      console.log('PAUSA');
+    } else {
+      setIntervalId = setInterval(initGame, 100); // Reanudar el juego
+    }
+  }
+});
+
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'r' || event.key === 'R') {
+    const popup = document.querySelector('div');
+    if (popup) {
+      document.body.removeChild(popup);
+      document.location.reload();
+    }
+  }
+});
+
+// Función para pausar o reanudar el juego
+const togglePause = () => {
+  isPaused = !isPaused; // Cambiar el estado de pausa al contrario del actual
+
+  if (isPaused) {
+    clearInterval(setIntervalId); // Pausar el juego al limpiar el intervalo
+  } else {
+    setIntervalId = setInterval(initGame, 100); // Reanudar el juego
+  }
+};
 
 // Obtener puntuación del LocalStorage
 let highScore = localStorage.getItem('high-score') || 0;
@@ -32,9 +63,49 @@ const updateFoodPosition = () => {
 
 const handleGameOver = () => {
   clearInterval(setIntervalId);
-  alert('Game Over. Pulsa OK para reiniciar');
-  location.reload();
+
+  showCenteredAlert('¡¡GAME OVER!!');
+  parpadear('pulsa R para reiniciar');
+  isPaused = true;
 };
+
+function showCenteredAlert(msg) {
+  // Crear un div para la ventana emergente
+  const popup = document.createElement('div');
+  popup.textContent = msg;
+  popup.style.position = 'fixed';
+  popup.style.top = '50%';
+  popup.style.left = '50%';
+  popup.style.transform = 'translate(-50%, -50%)';
+  popup.style.color = 'yellow';
+  popup.style.fontSize = 'yellow';
+
+  // Agregar el div al cuerpo del documento
+  document.body.appendChild(popup);
+}
+
+function parpadear(msg) {
+  const elemento = document.createElement('p');
+  elemento.textContent = msg;
+  elemento.style.position = 'fixed';
+  elemento.style.top = '50%';
+  elemento.style.left = '50%';
+  elemento.style.marginTop = '30px';
+  elemento.style.transform = 'translate(-50%, -50%)';
+  elemento.style.color = 'yellow';
+
+  document.body.appendChild(elemento);
+  let visible = true;
+
+  setInterval(function () {
+    if (visible) {
+      elemento.textContent = '';
+    } else {
+      elemento.textContent = msg;
+    }
+    visible = !visible;
+  }, 500);
+}
 
 // Cambiar velocidad
 const changeDirection = (event) => {
@@ -52,9 +123,6 @@ const changeDirection = (event) => {
     velocityY = 0;
   }
 };
-
-// Cambiar dirección
-controls.forEach((button) => button.addEventListener('click', () => changeDirection({ key: button.dataset.key })));
 
 // Función InitGame
 const initGame = () => {
