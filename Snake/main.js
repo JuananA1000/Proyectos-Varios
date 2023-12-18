@@ -15,30 +15,16 @@ let score = 0;
 
 let isPaused = false;
 
-document.addEventListener('keyup', (event) => {
-  if (event.key === 'p' || event.key === 'P') {
-    isPaused = !isPaused; // Cambiar el estado de pausa al contrario del actual
+// document.addEventListener('keydown', function (event) {
+//   if (event.key === 'r' || event.key === 'R') {
+//      const popup = document.querySelector('div');
+//       if (popup) {
+//         document.body.removeChild(popup);
+//         document.location.reload();
+//       }
 
-    if (isPaused) {
-      clearInterval(setIntervalId); // Pausar el juego al limpiar el intervalo
-      showCenteredAlert('En Pausa');
-      parpadear('vuelve a pulsar P para reanudar');
-      console.log('PAUSA');
-    } else {
-      setIntervalId = setInterval(initGame, 100); // Reanudar el juego
-    }
-  }
-});
-
-document.addEventListener('keydown', function (event) {
-  if (event.key === 'r' || event.key === 'R') {
-    const popup = document.querySelector('div');
-    if (popup) {
-      document.body.removeChild(popup);
-      document.location.reload();
-    }
-  }
-});
+//   }
+// });
 
 // Función para pausar o reanudar el juego
 const togglePause = () => {
@@ -108,7 +94,7 @@ function parpadear(msg) {
 }
 
 // Cambiar velocidad
-const changeDirection = (event) => {
+const keyboardEvents = (event) => {
   if (event.key === 'w' || (event.key === 'W' && velocityY != 1)) {
     velocityX = 0;
     velocityY = -1;
@@ -121,6 +107,23 @@ const changeDirection = (event) => {
   } else if (event.key === 'd' || (event.key === 'D' && velocityX != -1)) {
     velocityX = 1;
     velocityY = 0;
+  } else if (event.key === 'p' || event.key === 'P') {
+    isPaused = !isPaused;
+
+    if (isPaused) {
+      clearInterval(setIntervalId); // Pausar el juego al limpiar el intervalo
+      showCenteredAlert('En Pausa');
+      parpadear('vuelve a pulsar P para reanudar');
+      console.log('PAUSA');
+    } else {
+      setIntervalId = setInterval(initGame, 100); // Reanudar el juego
+    }
+  } else if (event.key === 'r' || event.key === 'R') {
+    const popup = document.querySelector('div');
+    if (popup) {
+      document.body.removeChild(popup);
+      document.location.reload();
+    }
   }
 };
 
@@ -178,7 +181,7 @@ function main() {
   updateFoodPosition();
   setIntervalId = setInterval(initGame, 100);
 
-  document.addEventListener('keyup', changeDirection);
+  document.addEventListener('keyup', keyboardEvents);
 }
 
 main();
