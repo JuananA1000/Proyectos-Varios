@@ -15,17 +15,6 @@ let score = 0;
 
 let isPaused = false;
 
-// document.addEventListener('keydown', function (event) {
-//   if (event.key === 'r' || event.key === 'R') {
-//      const popup = document.querySelector('div');
-//       if (popup) {
-//         document.body.removeChild(popup);
-//         document.location.reload();
-//       }
-
-//   }
-// });
-
 // Función para pausar o reanudar el juego
 const togglePause = () => {
   isPaused = !isPaused; // Cambiar el estado de pausa al contrario del actual
