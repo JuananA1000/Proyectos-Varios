@@ -15,14 +15,37 @@ let score = 0;
 
 let isPaused = false;
 
-// Función para pausar o reanudar el juego
-const togglePause = () => {
-  isPaused = !isPaused; // Cambiar el estado de pausa al contrario del actual
+// Eventos de teclado
+const keyboardEvents = (event) => {
+  if (event.key === 'w' || (event.key === 'W' && velocityY != 1)) {
+    velocityX = 0;
+    velocityY = -1;
+  } else if (event.key === 's' || (event.key === 'S' && velocityY != -1)) {
+    velocityX = 0;
+    velocityY = 1;
+  } else if (event.key === 'a' || (event.key === 'A' && velocityX != 1)) {
+    velocityX = -1;
+    velocityY = 0;
+  } else if (event.key === 'd' || (event.key === 'D' && velocityX != -1)) {
+    velocityX = 1;
+    velocityY = 0;
+  } else if (event.key === 'p' || event.key === 'P') {
+    isPaused = !isPaused;
 
-  if (isPaused) {
-    clearInterval(setIntervalId); // Pausar el juego al limpiar el intervalo
-  } else {
-    setIntervalId = setInterval(initGame, 100); // Reanudar el juego
+    if (isPaused) {
+      clearInterval(setIntervalId); // Pausar el juego al limpiar el intervalo
+      showCenteredAlert('En Pausa');
+      parpadear('vuelve a pulsar P para reanudar');
+      console.log('PAUSA');
+    } else {
+      setIntervalId = setInterval(initGame, 100); // Reanudar el juego
+    }
+  } else if (event.key === 'r' || event.key === 'R') {
+    const popup = document.querySelector('div');
+    if (popup) {
+      document.body.removeChild(popup);
+      document.location.reload();
+    }
   }
 };
 
@@ -81,40 +104,6 @@ function parpadear(msg) {
     visible = !visible;
   }, 500);
 }
-
-// Cambiar velocidad
-const keyboardEvents = (event) => {
-  if (event.key === 'w' || (event.key === 'W' && velocityY != 1)) {
-    velocityX = 0;
-    velocityY = -1;
-  } else if (event.key === 's' || (event.key === 'S' && velocityY != -1)) {
-    velocityX = 0;
-    velocityY = 1;
-  } else if (event.key === 'a' || (event.key === 'A' && velocityX != 1)) {
-    velocityX = -1;
-    velocityY = 0;
-  } else if (event.key === 'd' || (event.key === 'D' && velocityX != -1)) {
-    velocityX = 1;
-    velocityY = 0;
-  } else if (event.key === 'p' || event.key === 'P') {
-    isPaused = !isPaused;
-
-    if (isPaused) {
-      clearInterval(setIntervalId); // Pausar el juego al limpiar el intervalo
-      showCenteredAlert('En Pausa');
-      parpadear('vuelve a pulsar P para reanudar');
-      console.log('PAUSA');
-    } else {
-      setIntervalId = setInterval(initGame, 100); // Reanudar el juego
-    }
-  } else if (event.key === 'r' || event.key === 'R') {
-    const popup = document.querySelector('div');
-    if (popup) {
-      document.body.removeChild(popup);
-      document.location.reload();
-    }
-  }
-};
 
 // Función InitGame
 const initGame = () => {
