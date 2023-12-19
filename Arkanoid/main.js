@@ -30,9 +30,9 @@ let isPaused = false;
 // Eventos del ratón
 document.addEventListener('mousemove', mouseMoveHandler, false);
 
+// Cuando el juego marca GAME OVER y se le pulsa P también reinicia. Corregir eso
 document.addEventListener('keydown', function (event) {
-  const popup = document.querySelector('div');
-  const msg = document.querySelector('.msg');
+  const popup = document.querySelectorAll('.msg');
 
   if (event.key === 'p' || event.key === 'P') {
     isPaused = !isPaused;
@@ -42,15 +42,15 @@ document.addEventListener('keydown', function (event) {
     } else {
       // Eliminar la ventana emergente de pausa
       if (popup) {
-        document.body.removeChild(popup);
-        document.body.removeChild(msg);
+        for (let i = 0; i < popup.length; i++) {
+          popup[i].remove();
+        }
       }
     }
   }
+  
   if (event.key === 'r' || event.key === 'R') {
-    // const popup = document.querySelector('div');
     if (popup) {
-      document.body.removeChild(popup);
       document.location.reload();
     }
   }
@@ -154,6 +154,7 @@ function showCenteredAlert(msg) {
   // Crear un div para la ventana emergente
   const popup = document.createElement('div');
   popup.textContent = msg;
+  popup.classList.add('msg');
   popup.style.position = 'fixed';
   popup.style.top = '50%';
   popup.style.left = '50%';
