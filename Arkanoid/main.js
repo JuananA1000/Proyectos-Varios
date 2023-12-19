@@ -31,6 +31,9 @@ let isPaused = false;
 document.addEventListener('mousemove', mouseMoveHandler, false);
 
 document.addEventListener('keydown', function (event) {
+  const popup = document.querySelector('div');
+  const msg = document.querySelector('.msg');
+  
   if (event.key === 'p' || event.key === 'P') {
     isPaused = !isPaused;
     if (isPaused) {
@@ -38,17 +41,14 @@ document.addEventListener('keydown', function (event) {
       parpadear('vuelve a pulsar P para reanudar');
     } else {
       // Eliminar la ventana emergente de pausa
-      const popup = document.querySelector('div');
       if (popup) {
         document.body.removeChild(popup);
+        document.body.removeChild(msg);
       }
     }
   }
-});
-
-document.addEventListener('keydown', function (event) {
   if (event.key === 'r' || event.key === 'R') {
-    const popup = document.querySelector('div');
+    // const popup = document.querySelector('div');
     if (popup) {
       document.body.removeChild(popup);
       document.location.reload();
@@ -115,6 +115,7 @@ function drawBricks() {
 function parpadear(msg) {
   const elemento = document.createElement('p');
   elemento.textContent = msg;
+  elemento.classList.add('msg');
   elemento.style.position = 'fixed';
   elemento.style.top = '50%';
   elemento.style.left = '50%';
