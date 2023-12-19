@@ -33,7 +33,7 @@ document.addEventListener('mousemove', mouseMoveHandler, false);
 document.addEventListener('keydown', function (event) {
   const popup = document.querySelector('div');
   const msg = document.querySelector('.msg');
-  
+
   if (event.key === 'p' || event.key === 'P') {
     isPaused = !isPaused;
     if (isPaused) {
