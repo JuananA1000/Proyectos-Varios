@@ -10,7 +10,6 @@
 /* Centrar en pantalla */
 body {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
@@ -21,7 +20,13 @@ h1 {
   text-align: center;
 }
 
+.controls{
+  position: absolute;
+  left: 200px; 
+}
+
 .wrapper {
+  position: relative;
   width: 75vmin;
   height: 85vmin;
   display: flex;
