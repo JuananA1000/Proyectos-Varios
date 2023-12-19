@@ -17,6 +17,7 @@ let isPaused = false;
 
 // Eventos de teclado
 const keyboardEvents = (event) => {
+  // Mover serpiente arriba, abajo, izda, dcha
   if (event.key === 'w' || (event.key === 'W' && velocityY != 1)) {
     velocityX = 0;
     velocityY = -1;
@@ -30,20 +31,27 @@ const keyboardEvents = (event) => {
     velocityX = 1;
     velocityY = 0;
   } else if (event.key === 'p' || event.key === 'P') {
+    // Pausar juego
     isPaused = !isPaused;
 
     if (isPaused) {
       clearInterval(setIntervalId); // Pausar el juego al limpiar el intervalo
       showCenteredAlert('En Pausa');
       parpadear('vuelve a pulsar P para reanudar');
-      console.log('PAUSA');
     } else {
-      setIntervalId = setInterval(initGame, 100); // Reanudar el juego
+      const msg = document.querySelectorAll('.msg');
+      if (msg) {
+        for (let i = 0; i < msg.length; i++) {
+          msg[i].remove();
+        }
+        setIntervalId = setInterval(initGame, 100); // Reanudar el juego
+      }
     }
   } else if (event.key === 'r' || event.key === 'R') {
-    const popup = document.querySelector('div');
-    if (popup) {
-      document.body.removeChild(popup);
+    // Reiniciar juego
+    const msg = document.querySelector('.msg');
+    if (msg) {
+      document.body.removeChild(msg);
       document.location.reload();
     }
   }
@@ -71,6 +79,7 @@ function showCenteredAlert(msg) {
   // Crear un div para la ventana emergente
   const popup = document.createElement('div');
   popup.textContent = msg;
+  popup.classList.add('msg');
   popup.style.position = 'fixed';
   popup.style.top = '50%';
   popup.style.left = '50%';
@@ -85,6 +94,7 @@ function showCenteredAlert(msg) {
 function parpadear(msg) {
   const elemento = document.createElement('p');
   elemento.textContent = msg;
+  elemento.classList.add('msg');
   elemento.style.position = 'fixed';
   elemento.style.top = '50%';
   elemento.style.left = '50%';
