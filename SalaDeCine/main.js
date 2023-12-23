@@ -6,6 +6,15 @@ const movieSelect = document.getElementById('movie');
 
 let ticketPrice = +movieSelect.value;
 
+movieSelect.addEventListener('change', selectMovie);
+
+// Seleccionar película
+function selectMovie(e) {
+  ticketPrice = +e.target.value;
+  setMovieData(e.target.selectedIndex, e.target.value);
+  updateSelectedCount();
+}
+
 // Guardar índice de película y precio
 function setMovieData(movieIndex, moviePrice) {
   localStorage.setItem('selectedMovieIndex', movieIndex);
@@ -40,7 +49,7 @@ function populateUI() {
 
   const selectedMovieIndex = localStorage.getItem('selectedMovieIndex');
 
-  if (selectedMovieIndex!==null) {
-    movieSelect.selectedIndex=selectedMovieIndex
+  if (selectedMovieIndex !== null) {
+    movieSelect.selectedIndex = selectedMovieIndex;
   }
 }
