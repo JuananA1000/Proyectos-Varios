@@ -7,12 +7,22 @@ const movieSelect = document.getElementById('movie');
 let ticketPrice = +movieSelect.value;
 
 movieSelect.addEventListener('change', selectMovie);
+container.addEventListener('click', seatClickEvent);
 
 // Seleccionar película
 function selectMovie(e) {
   ticketPrice = +e.target.value;
   setMovieData(e.target.selectedIndex, e.target.value);
   updateSelectedCount();
+}
+
+// Cambiar aspecto al hacer click en un asiento y contabilizarlo
+function seatClickEvent(e) {
+  if (e.target.classList.contains('seat') && !e.target.classList.contains('occupied')) {
+    e.target.classList.toggle('selected');
+   
+    updateSelectedCount();
+  }
 }
 
 // Guardar índice de película y precio
