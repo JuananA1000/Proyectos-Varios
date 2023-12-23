@@ -63,3 +63,6 @@ function populateUI() {
     movieSelect.selectedIndex = selectedMovieIndex;
   }
 }
+
+// Contabilizar total
+updateSelectedCount();
