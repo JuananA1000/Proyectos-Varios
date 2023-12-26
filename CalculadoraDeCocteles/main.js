@@ -5,20 +5,20 @@
 
 const ingredientes = document.querySelectorAll('img');
 const btnShake = document.querySelector('.btnShake');
-let coctel = [];
+const coctel = [];
 
-btnShake.addEventListener('click', () => {
-  // Imprimir coctel en pantalla
-  console.log('áaa');
+ingredientes.forEach(function (img) {
+  img.addEventListener('click', añadirIngrediente);
 });
+btnShake.addEventListener('click', crearCoctel);
 
-ingredientes.forEach((ingrediente) => {
-  ingrediente.addEventListener('click', (event) => {
-    coctel.push(ingrediente);
+// Función para añadir ingredientes a la receta
+function añadirIngrediente(event) {
+  const titulo = event.target.getAttribute('title');
+  console.log(titulo);
+}
 
-    console.log('Array: ', coctel);
-
-    const titulo = event.target.getAttribute('title');
-    console.log(titulo);
-  });
-});
+// Función para agitar el cóctel, asignada al botón 'shake'
+function crearCoctel() {
+  console.log('Crear coctel');
+}
