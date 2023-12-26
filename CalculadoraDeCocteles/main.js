@@ -6,3 +6,19 @@
 const ingredientes = document.querySelectorAll('img');
 const btnShake = document.querySelector('.btnShake');
 let coctel = [];
+
+btnShake.addEventListener('click', () => {
+  // Imprimir coctel en pantalla
+  console.log('áaa');
+});
+
+ingredientes.forEach((ingrediente) => {
+  ingrediente.addEventListener('click', (event) => {
+    coctel.push(ingrediente);
+
+    console.log('Array: ', coctel);
+
+    const titulo = event.target.getAttribute('title');
+    console.log(titulo);
+  });
+});
