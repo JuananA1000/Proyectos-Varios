@@ -6,10 +6,9 @@ const coctel = [];
 ingredientes.forEach((img) => img.addEventListener('click', añadirIngrediente));
 btnShake.addEventListener('click', crearCoctel);
 
-// PENDIENTE: 1. eliminar console.logs, que aparezca la imagen del coctel en la pantalla
-// PENDIENTE: 2. alerts personalizados
-// PENDIENTE: 3. la app es una coctelería, darle un estilo más guasón y profesional
-// PENDIENTE: 4. añadir más ingredientes y más cócteles
+// PENDIENTE: 3. alerts personalizados
+// PENDIENTE: 4. la app es una coctelería, darle un estilo más guasón y profesional
+// PENDIENTE: 5. añadir más ingredientes y más cócteles
 // IDEA: al pulsar 'shake', queremos que la pantalla vibre un poco, y que el cóctel salga a los 3 segundos
 
 // Añadir ingredientes a la receta
@@ -24,6 +23,20 @@ function añadirIngrediente(event) {
   }
 }
 
+// La imagen del cóctel la pillamos de TheCocktailDB.com
+function fetchCocktailDbAPI(res) {
+  const API_URL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${res}`;
+  fetch(API_URL)
+    .then((respuesta) => respuesta.json())
+    .then((data) => {
+      console.log('COCKTAILDB DATA: ', data.drinks[0]);
+      resultado.innerHTML = `<img src=${data.drinks[0].strDrinkThumb}  class='imgCoctel'  width='100'>`;
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+}
+
 // Agitar el cóctel, asignada al botón 'shake'
 function crearCoctel() {
   resultado.innerHTML = '';
@@ -35,20 +48,20 @@ function crearCoctel() {
       coctel.includes('Ron') &&
       coctel.includes('Azúcar')
     ) {
-      console.log('Mojito');
+      fetchCocktailDbAPI('mojito');
     } else if (
       coctel.includes('Azúcar') &&
       coctel.includes('Agua con Gas') &&
       coctel.includes('Angostura') &&
       coctel.includes('Wiski')
     ) {
-      console.log('Old Fashioned');
+      fetchCocktailDbAPI('old_fashioned');
     } else if (coctel.includes('Lima') && coctel.includes('Azúcar') && coctel.includes('Cachaza')) {
-      console.log('Caipirinha');
+      fetchCocktailDbAPI('caipirinha');
     } else {
-      console.log('Ese cóctel no esite');
+      resultado.innerHTML = 'Esa guarrada se la va a beber tu padre';
     }
   } else {
-    console.log('Coctelera vacía');
+    resultado.innerHTML = `La coctelera está vacía ${API_URL}`;
   }
 }
