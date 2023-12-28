@@ -6,7 +6,6 @@ const coctel = [];
 ingredientes.forEach((img) => img.addEventListener('click', añadirIngrediente));
 btnShake.addEventListener('click', crearCoctel);
 
-// PENDIENTE: 4. la app es una coctelería, darle un estilo más guasón y profesional
 // PENDIENTE: 5. añadir más ingredientes y más cócteles
 // IDEA: al pulsar 'shake', queremos que la pantalla vibre un poco, y que el cóctel salga a los 3 segundos
 
