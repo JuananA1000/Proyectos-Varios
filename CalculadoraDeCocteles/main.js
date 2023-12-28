@@ -6,7 +6,6 @@ const coctel = [];
 ingredientes.forEach((img) => img.addEventListener('click', añadirIngrediente));
 btnShake.addEventListener('click', crearCoctel);
 
-// PENDIENTE: 3. alerts personalizados
 // PENDIENTE: 4. la app es una coctelería, darle un estilo más guasón y profesional
 // PENDIENTE: 5. añadir más ingredientes y más cócteles
 // IDEA: al pulsar 'shake', queremos que la pantalla vibre un poco, y que el cóctel salga a los 3 segundos
@@ -19,7 +18,7 @@ function añadirIngrediente(event) {
     coctel.push(ingrediente);
     resultado.innerHTML = coctel.join(' + ');
   } else {
-    alert('repetido');
+    alertPersonalizado();
   }
 }
 
@@ -29,8 +28,7 @@ function fetchCocktailDbAPI(res) {
   fetch(API_URL)
     .then((respuesta) => respuesta.json())
     .then((data) => {
-      console.log('COCKTAILDB DATA: ', data.drinks[0]);
-      resultado.innerHTML = `<img src=${data.drinks[0].strDrinkThumb}  class='imgCoctel'  width='100'>`;
+      resultado.innerHTML = `<img src=${data.drinks[0].strDrinkThumb} class='imgCoctel' width='100'>`;
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -64,4 +62,23 @@ function crearCoctel() {
   } else {
     resultado.innerHTML = `La coctelera está vacía ${API_URL}`;
   }
+}
+
+function alertPersonalizado() {
+  const popup = document.createElement('div');
+  popup.textContent = 'Ya has utilizado ese ingrediente';
+  popup.classList.add('msg');
+  popup.style.position = 'fixed';
+  popup.style.top = '50%';
+  popup.style.left = '50%';
+  popup.style.transform = 'translate(-50%, -50%)';
+  popup.style.backgroundColor = 'yellow';
+  popup.style.width = '200px';
+  popup.style.height = '100px';
+  popup.style.color = 'red';
+  popup.style.fontSize = 'yellow';
+
+  document.body.appendChild(popup);
+
+  setInterval(() => (popup.style.display = 'none'), 1000);
 }
