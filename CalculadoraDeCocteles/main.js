@@ -6,8 +6,7 @@ const coctel = [];
 ingredientes.forEach((img) => img.addEventListener('click', añadirIngrediente));
 btnShake.addEventListener('click', crearCoctel);
 
-// PENDIENTE: 5. añadir más ingredientes y más cócteles
-// IDEA: al pulsar 'shake', queremos que la pantalla vibre un poco, y que el cóctel salga a los 3 segundos
+// PENDIENTE: al terminar de agitar el cóctel aparecerá la foto
 
 // Añadir ingredientes a la receta
 function añadirIngrediente(event) {
@@ -34,7 +33,31 @@ function fetchCocktailDbAPI(res) {
     });
 }
 
-// Agitar el cóctel, asignada al botón 'shake'
+function agitarCoctel() {
+  const pantalla = document.getElementsByTagName('body')[0];
+  let tiempoInicio = Date.now();
+
+  function vibrar() {
+    const tiempoActual = Date.now(); // Obtener el tiempo actual en cada iteración
+    const tiempoTranscurrido = tiempoActual - tiempoInicio;
+
+    // Detener la vibración después de 3 segundos (3000 milisegundos)
+    if (tiempoTranscurrido > 3000) {
+      clearInterval(vibracion); // Detener la vibración
+      pantalla.style.transform = 'none'; // Establecer la transformación a su estado inicial
+    } else {
+      // Generar valores aleatorios para la vibración en los ejes X e Y
+      const randomX = Math.random() * 10 - 7;
+      const randomY = Math.random() * 6 - 3;
+
+      pantalla.style.transform = `translate(${randomX}px, ${randomY}px)`;
+    }
+  }
+
+  const vibracion = setInterval(vibrar, 100); // Ejecutar la función vibrar cada 100 milisegundos
+}
+
+// Añadir ingredientes al cóctel, asignada al botón 'shake'
 function crearCoctel() {
   resultado.innerHTML = '';
 
@@ -45,6 +68,7 @@ function crearCoctel() {
       coctel.includes('Ron') &&
       coctel.includes('Azúcar')
     ) {
+      agitarCoctel();
       fetchCocktailDbAPI('mojito');
     } else if (
       coctel.includes('Azúcar') &&
@@ -52,14 +76,16 @@ function crearCoctel() {
       coctel.includes('Angostura') &&
       coctel.includes('Wiski')
     ) {
+      agitarCoctel();
       fetchCocktailDbAPI('old_fashioned');
     } else if (coctel.includes('Lima') && coctel.includes('Azúcar') && coctel.includes('Cachaza')) {
+      agitarCoctel();
       fetchCocktailDbAPI('caipirinha');
     } else {
       resultado.innerHTML = 'Esa guarrada se la va a beber tu padre';
     }
   } else {
-    resultado.innerHTML = `La coctelera está vacía ${API_URL}`;
+    resultado.innerHTML = 'La coctelera está vacía. Échale cosas';
   }
 }
 
