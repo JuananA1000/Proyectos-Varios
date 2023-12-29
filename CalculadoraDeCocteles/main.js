@@ -1,10 +1,13 @@
 const ingredientes = document.querySelectorAll('img');
 const btnShake = document.querySelector('.btnShake');
-const resultado = document.querySelector('.resultado');
-const coctel = [];
+const btnEmpty = document.querySelector('.btnEmpty');
+let resultado = document.querySelector('.resultado');
+let coctel = [];
+let tiempoDeAgitado = 3000;
 
 ingredientes.forEach((img) => img.addEventListener('click', añadirIngrediente));
 btnShake.addEventListener('click', crearCoctel);
+btnEmpty.addEventListener('click', vaciarCoctelera);
 
 // PENDIENTE: al terminar de agitar el cóctel aparecerá la foto
 
@@ -22,32 +25,38 @@ function añadirIngrediente(event) {
 
 // La imagen del cóctel la pillamos de TheCocktailDB.com
 function fetchCocktailDbAPI(res) {
-  const API_URL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${res}`;
-  fetch(API_URL)
-    .then((respuesta) => respuesta.json())
-    .then((data) => {
-      resultado.innerHTML = `
-      <div>
-      <img src=${data.drinks[0].strDrinkThumb} class='imgCoctel' width='100'>
-      <p>${res}</p>
-      </div>
-      `;
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+  agitarCoctel();
+
+  setTimeout(() => {
+    const API_URL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${res}`;
+    fetch(API_URL)
+      .then((respuesta) => respuesta.json())
+      .then((data) => {
+        resultado.innerHTML = `
+          <div> 
+            <img src=${data.drinks[0].strDrinkThumb} class='imgCoctel' width='100'>
+            <p>${res}</p>
+          </div>
+        `;
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  }, tiempoDeAgitado);
 }
 
 function agitarCoctel() {
   const pantalla = document.getElementsByTagName('body')[0];
   let tiempoInicio = Date.now();
 
+  resultado.innerHTML = 'Agitando...';
+
   function vibrar() {
     const tiempoActual = Date.now(); // Obtener el tiempo actual en cada iteración
     const tiempoTranscurrido = tiempoActual - tiempoInicio;
 
     // Detener la vibración después de 3 segundos (3000 milisegundos)
-    if (tiempoTranscurrido > 3000) {
+    if (tiempoTranscurrido > tiempoDeAgitado) {
       clearInterval(vibracion); // Detener la vibración
       pantalla.style.transform = 'none'; // Establecer la transformación a su estado inicial
     } else {
@@ -73,7 +82,7 @@ function crearCoctel() {
       coctel.includes('Ron') &&
       coctel.includes('Azúcar')
     ) {
-      agitarCoctel();
+      // agitarCoctel();
       fetchCocktailDbAPI('mojito');
     } else if (
       coctel.includes('Azúcar') &&
@@ -81,16 +90,25 @@ function crearCoctel() {
       coctel.includes('Angostura') &&
       coctel.includes('Wiski')
     ) {
-      agitarCoctel();
-      fetchCocktailDbAPI('old_fashioned');
+      // agitarCoctel();
+      fetchCocktailDbAPI('old fashioned');
     } else if (coctel.includes('Lima') && coctel.includes('Azúcar') && coctel.includes('Cachaza')) {
-      agitarCoctel();
+      // agitarCoctel();
       fetchCocktailDbAPI('caipirinha');
     } else {
-      resultado.innerHTML = 'Esa guarrada se la va a beber tu padre';
+      resultado.innerHTML = 'Esa guarrada se la va a beber tu padre. Vacía la coctelera';
     }
   } else {
     resultado.innerHTML = 'La coctelera está vacía. Échale cosas';
+  }
+}
+
+function vaciarCoctelera() {
+  if (coctel.length === 0) {
+    resultado.innerHTML = 'Está ya vacía, tonto, que eres tonto';
+  } else {
+    coctel = [];
+    resultado.innerHTML = '';
   }
 }
 
