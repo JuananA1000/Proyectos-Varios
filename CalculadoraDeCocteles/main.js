@@ -26,7 +26,12 @@ function fetchCocktailDbAPI(res) {
   fetch(API_URL)
     .then((respuesta) => respuesta.json())
     .then((data) => {
-      resultado.innerHTML = `<img src=${data.drinks[0].strDrinkThumb} class='imgCoctel' width='100'>`;
+      resultado.innerHTML = `
+      <div>
+      <img src=${data.drinks[0].strDrinkThumb} class='imgCoctel' width='100'>
+      <p>${res}</p>
+      </div>
+      `;
     })
     .catch((error) => {
       console.error('Error:', error);
