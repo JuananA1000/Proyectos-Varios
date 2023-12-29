@@ -116,17 +116,10 @@ function alertPersonalizado() {
   const popup = document.createElement('div');
   popup.textContent = 'Ya has utilizado ese ingrediente';
   popup.classList.add('msg');
-  popup.style.position = 'fixed';
-  popup.style.top = '50%';
-  popup.style.left = '50%';
-  popup.style.transform = 'translate(-50%, -50%)';
-  popup.style.backgroundColor = 'yellow';
-  popup.style.width = '200px';
-  popup.style.height = '100px';
-  popup.style.color = 'red';
-  popup.style.fontSize = 'yellow';
 
   document.body.appendChild(popup);
 
-  setInterval(() => (popup.style.display = 'none'), 1000);
+  setTimeout(() => {
+    popup.style.display = 'none';
+  }, 1000);
 }
