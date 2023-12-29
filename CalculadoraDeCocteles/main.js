@@ -9,8 +9,6 @@ ingredientes.forEach((img) => img.addEventListener('click', añadirIngrediente))
 btnShake.addEventListener('click', crearCoctel);
 btnEmpty.addEventListener('click', vaciarCoctelera);
 
-// PENDIENTE: al terminar de agitar el cóctel aparecerá la foto
-
 // Añadir ingredientes a la receta
 function añadirIngrediente(event) {
   const ingrediente = event.target.getAttribute('title');
