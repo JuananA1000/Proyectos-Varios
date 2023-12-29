@@ -9,8 +9,6 @@ ingredientes.forEach((img) => img.addEventListener('click', añadirIngrediente))
 btnShake.addEventListener('click', crearCoctel);
 btnEmpty.addEventListener('click', vaciarCoctelera);
 
-// PENDIENTE: al terminar de agitar el cóctel aparecerá la foto
-
 // Añadir ingredientes a la receta
 function añadirIngrediente(event) {
   const ingrediente = event.target.getAttribute('title');
@@ -82,7 +80,6 @@ function crearCoctel() {
       coctel.includes('Ron') &&
       coctel.includes('Azúcar')
     ) {
-      // agitarCoctel();
       fetchCocktailDbAPI('mojito');
     } else if (
       coctel.includes('Azúcar') &&
@@ -90,10 +87,8 @@ function crearCoctel() {
       coctel.includes('Angostura') &&
       coctel.includes('Wiski')
     ) {
-      // agitarCoctel();
       fetchCocktailDbAPI('old fashioned');
     } else if (coctel.includes('Lima') && coctel.includes('Azúcar') && coctel.includes('Cachaza')) {
-      // agitarCoctel();
       fetchCocktailDbAPI('caipirinha');
     } else {
       resultado.innerHTML = 'Esa guarrada se la va a beber tu padre. Vacía la coctelera';
