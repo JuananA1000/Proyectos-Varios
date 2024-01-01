@@ -21,19 +21,19 @@ function añadirIngrediente(event) {
   }
 }
 
-// La imagen del cóctel la pillamos de TheCocktailDB.com
-function fetchCocktailDbAPI(res) {
+// La imagen y el nombre del cóctel la pillamos de TheCocktailDB.com
+function fetchCocktailDbAPI(nomCoctel) {
   agitarCoctel();
 
   setTimeout(() => {
-    const API_URL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${res}`;
+    const API_URL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${nomCoctel}`;
     fetch(API_URL)
       .then((respuesta) => respuesta.json())
       .then((data) => {
         resultado.innerHTML = `
           <div> 
-            <img src=${data.drinks[0].strDrinkThumb} class='imgCoctel' width='100'>
-            <p>${res}</p>
+            <img src=${data.drinks[0].strDrinkThumb} class='imgCoctel' width='110'>
+            <p>${data.drinks[0].strDrink}</p>
           </div>
         `;
       })
@@ -75,20 +75,21 @@ function crearCoctel() {
 
   if (coctel.length > 0) {
     if (
-      coctel.includes('Lima') &&
-      coctel.includes('Agua con Gas') &&
       coctel.includes('Ron') &&
+      coctel.includes('Agua con Gas') &&
+      coctel.includes('Lima') &&
+      coctel.includes('Hierbabuena') &&
       coctel.includes('Azúcar')
     ) {
       fetchCocktailDbAPI('mojito');
     } else if (
-      coctel.includes('Azúcar') &&
+      coctel.includes('Wiski') &&
       coctel.includes('Agua con Gas') &&
       coctel.includes('Angostura') &&
-      coctel.includes('Wiski')
+      coctel.includes('Azúcar')
     ) {
       fetchCocktailDbAPI('old fashioned');
-    } else if (coctel.includes('Lima') && coctel.includes('Azúcar') && coctel.includes('Cachaza')) {
+    } else if (coctel.includes('Cachaza') && coctel.includes('Lima') && coctel.includes('Azúcar')) {
       fetchCocktailDbAPI('caipirinha');
     } else {
       resultado.innerHTML = 'Esa guarrada se la va a beber tu padre. Vacía la coctelera';
