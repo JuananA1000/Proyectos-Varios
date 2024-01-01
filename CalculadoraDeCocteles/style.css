@@ -77,6 +77,11 @@ button:hover {
 .tecla img {
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  cursor: grab;
+}
+
+.tecla img:active {
+  cursor: grabbing;
 }
 
 .msg {
@@ -91,8 +96,8 @@ button:hover {
   width: 400px;
   color: #ffcc00;
   display: flex;
-  text-align: center; 
-  align-items: center; 
+  text-align: center;
+  align-items: center;
   justify-content: center;
 }
 
