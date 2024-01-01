@@ -9,7 +9,7 @@ ingredientes.forEach((img) => img.addEventListener('click', añadirIngrediente))
 btnShake.addEventListener('click', crearCoctel);
 btnEmpty.addEventListener('click', vaciarCoctelera);
 
-// Añadir ingredientes a la receta
+// Añadir ingredientes al cóctel
 function añadirIngrediente(event) {
   const ingrediente = event.target.getAttribute('title');
 
@@ -21,28 +21,7 @@ function añadirIngrediente(event) {
   }
 }
 
-// La imagen y el nombre del cóctel la pillamos de TheCocktailDB.com
-function fetchCocktailDbAPI(nomCoctel) {
-  agitarCoctel();
-
-  setTimeout(() => {
-    const API_URL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${nomCoctel}`;
-    fetch(API_URL)
-      .then((respuesta) => respuesta.json())
-      .then((data) => {
-        resultado.innerHTML = `
-          <div> 
-            <img src=${data.drinks[0].strDrinkThumb} class='imgCoctel' width='110'>
-            <p>${data.drinks[0].strDrink}</p>
-          </div>
-        `;
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-  }, tiempoDeAgitado);
-}
-
+// La pantalla empezará a vibrar cuando pulsemos, el botón 'shake'
 function agitarCoctel() {
   const pantalla = document.getElementsByTagName('body')[0];
   let tiempoInicio = Date.now();
@@ -50,13 +29,13 @@ function agitarCoctel() {
   resultado.innerHTML = 'Agitando...';
 
   function vibrar() {
-    const tiempoActual = Date.now(); // Obtener el tiempo actual en cada iteración
+    const tiempoActual = Date.now();
     const tiempoTranscurrido = tiempoActual - tiempoInicio;
 
-    // Detener la vibración después de 3 segundos (3000 milisegundos)
+    // Detener el agitado
     if (tiempoTranscurrido > tiempoDeAgitado) {
-      clearInterval(vibracion); // Detener la vibración
-      pantalla.style.transform = 'none'; // Establecer la transformación a su estado inicial
+      clearInterval(vibracion);
+      pantalla.style.transform = 'none';
     } else {
       // Generar valores aleatorios para la vibración en los ejes X e Y
       const randomX = Math.random() * 10 - 7;
@@ -66,10 +45,10 @@ function agitarCoctel() {
     }
   }
 
-  const vibracion = setInterval(vibrar, 100); // Ejecutar la función vibrar cada 100 milisegundos
+  const vibracion = setInterval(vibrar, 100);
 }
 
-// Añadir ingredientes al cóctel, asignada al botón 'shake'
+// Crear distintos cócteles en función de los ingredientes que haya
 function crearCoctel() {
   resultado.innerHTML = '';
 
@@ -99,6 +78,7 @@ function crearCoctel() {
   }
 }
 
+// Vaciamos el contenido de la pantalla
 function vaciarCoctelera() {
   if (coctel.length === 0) {
     resultado.innerHTML = 'Está ya vacía, tonto, que eres tonto';
@@ -108,6 +88,29 @@ function vaciarCoctelera() {
   }
 }
 
+// La imagen y el nombre del cóctel la pillamos de TheCocktailDB.com
+function fetchCocktailDbAPI(nomCoctel) {
+  agitarCoctel();
+
+  setTimeout(() => {
+    const API_URL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${nomCoctel}`;
+    fetch(API_URL)
+      .then((respuesta) => respuesta.json())
+      .then((data) => {
+        resultado.innerHTML = `
+          <div> 
+            <img src=${data.drinks[0].strDrinkThumb} class='imgCoctel' width='110'>
+            <figure>${data.drinks[0].strDrink}</figure>
+          </div>
+        `;
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  }, tiempoDeAgitado);
+}
+
+// Mensaje de alerta si repetimos algún ingrediente
 function alertPersonalizado() {
   const popup = document.createElement('div');
   popup.textContent = 'Ya has utilizado ese ingrediente';
