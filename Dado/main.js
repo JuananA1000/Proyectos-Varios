@@ -1,6 +1,8 @@
 const dice = document.querySelector('.dice');
 const rollBtn = document.querySelector('.roll');
 
+rollBtn.addEventListener('click', randomDice);
+
 function randomDice() {
   const random = Math.floor(Math.random() * 10);
 
