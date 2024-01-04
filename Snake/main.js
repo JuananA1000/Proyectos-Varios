@@ -76,18 +76,10 @@ const handleGameOver = () => {
 };
 
 function showCenteredAlert(msg) {
-  // Crear un div para la ventana emergente
   const popup = document.createElement('div');
   popup.textContent = msg;
   popup.classList.add('msg');
-  popup.style.position = 'fixed';
-  popup.style.top = '50%';
-  popup.style.left = '50%';
-  popup.style.transform = 'translate(-50%, -50%)';
-  popup.style.color = 'yellow';
-  popup.style.fontSize = 'yellow';
 
-  // Agregar el div al cuerpo del documento
   document.body.appendChild(popup);
 }
 
@@ -95,12 +87,7 @@ function parpadear(msg) {
   const elemento = document.createElement('p');
   elemento.textContent = msg;
   elemento.classList.add('msg');
-  elemento.style.position = 'fixed';
-  elemento.style.top = '50%';
-  elemento.style.left = '50%';
   elemento.style.marginTop = '30px';
-  elemento.style.transform = 'translate(-50%, -50%)';
-  elemento.style.color = 'yellow';
 
   document.body.appendChild(elemento);
   let visible = true;
@@ -126,11 +113,6 @@ const initGame = () => {
     updateFoodPosition();
     snakeBody.push([foodY, foodX]);
     score++;
-    /*
-      if (score > highScore) {
-        highScore = score;
-      }
-    */
     highScore = score >= highScore ? score : highScore;
 
     localStorage.setItem('high-score', highScore);

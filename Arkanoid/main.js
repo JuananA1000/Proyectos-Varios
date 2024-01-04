@@ -48,7 +48,7 @@ document.addEventListener('keydown', function (event) {
       }
     }
   }
-  
+
   if (event.key === 'r' || event.key === 'R') {
     if (popup) {
       document.location.reload();
@@ -116,12 +116,7 @@ function parpadear(msg) {
   const elemento = document.createElement('p');
   elemento.textContent = msg;
   elemento.classList.add('msg');
-  elemento.style.position = 'fixed';
-  elemento.style.top = '50%';
-  elemento.style.left = '50%';
   elemento.style.marginTop = '30px';
-  elemento.style.transform = 'translate(-50%, -50%)';
-  elemento.style.color = 'red';
 
   document.body.appendChild(elemento);
   let visible = true;
@@ -155,13 +150,6 @@ function showCenteredAlert(msg) {
   const popup = document.createElement('div');
   popup.textContent = msg;
   popup.classList.add('msg');
-  popup.style.position = 'fixed';
-  popup.style.top = '50%';
-  popup.style.left = '50%';
-  popup.style.transform = 'translate(-50%, -50%)';
-  popup.style.color = 'red';
-  popup.style.padding = '20px';
-  popup.style.border = '1px solid #ccc';
 
   // Agregar el div al cuerpo del documento
   document.body.appendChild(popup);
@@ -183,8 +171,6 @@ function hitDetection() {
           score++;
 
           if (score === rowCount * columnCount) {
-            // alert('¡¡VICTORIA!!');
-            // document.location.reload(); // Creo que esto vale para refrescar el navegador
             showCenteredAlert('¡¡VICTORIA!!');
             parpadear('pulsa R para reiniciar');
             isPaused = true;

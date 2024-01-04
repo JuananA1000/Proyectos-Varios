@@ -63,6 +63,14 @@ h1 {
   background: #60cbff;
 }
 
+.msg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: yellow;
+}
+
 /* PENDIENTE: Tunning a los colores de la serpiente, lo que sea */
 
 @media screen and (max-width: 800px) {
