@@ -1,4 +1,8 @@
-body{
+:root {
+  --diametro: 80px;
+}
+
+body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -6,3 +10,20 @@ body{
   justify-content: center;
 }
 
+.beat {
+  display: flex;
+  width: 500px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.click {
+  width: var(--diametro);
+  height: var(--diametro);
+  border-radius: 50%;
+  background-color: red;
+}
+
+.clicked {
+  background-color: yellow;
+}
