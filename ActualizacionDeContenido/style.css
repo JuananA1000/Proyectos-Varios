@@ -1,0 +1,30 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.frase {
+  background-color: #ffeb38;
+  height: 100px;
+  width: 600px;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.play {
+  background-color: #ff6038;
+  height: 50px;
+  width: 100px;
+  border-radius: 15px;
+}
+.play:hover {
+  background-color: #e95732;
+  box-shadow: 5px 5px 5px #0000005a;
+  cursor: pointer;
+}
