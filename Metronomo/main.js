@@ -6,6 +6,13 @@ const audio = document.querySelector('audio');
 
 let clickActual = 0;
 
+const intervaloEnMilisegundos = 60 * 1000 / 50; 
+// const intervalID = setInterval(play, intervaloEnMilisegundos);
+
+// setTimeout(() => {
+//   clearInterval(intervalID); 
+// }, 5 * 60 * 1000); 
+
 masBtn.addEventListener('click', aumentarBpm);
 menosBtn.addEventListener('click', disminuirBpm);
 playBtn.addEventListener('click', play);
