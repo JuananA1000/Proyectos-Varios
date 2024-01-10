@@ -1,0 +1,23 @@
+body {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  margin-bottom: 100px;
+}
+
+.q2 {
+  display: none;
+}
+
+.q3 {
+  display: none;
+}
+
+.buttons {
+  margin-top: 100px;
+}
