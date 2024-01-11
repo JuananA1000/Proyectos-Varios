@@ -10,13 +10,15 @@ h1 {
   margin-bottom: 100px;
 }
 
-.q2 {
+.pregunta{
+  background-color: #ffcc00;
+  padding: 60px 100px;
+}
+
+.oculto {
   display: none;
 }
 
-.q3 {
-  display: none;
-}
 
 .buttons {
   margin-top: 100px;
