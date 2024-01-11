@@ -1,5 +1,4 @@
 const preguntas = document.querySelectorAll('.pregunta');
-const cuentaAtras = document.querySelectorAll('.cuenta-atras');
 const anterior = document.getElementById('btn-anterior');
 const siguiente = document.getElementById('btn-siguiente');
 
@@ -16,3 +15,26 @@ function sigPregunta() {
   }
   console.log('Siguiente');
 }
+
+function cuentaAtras() {
+  preguntas.forEach((divPregunta) => {
+    let cuenta = 5;
+    const divCuentaAtras = document.createElement('div');
+    divCuentaAtras.textContent = '05';
+
+    divPregunta.appendChild(divCuentaAtras);
+
+    const intervalo = setInterval(() => {
+      divCuentaAtras.textContent = cuenta.toString().padStart(2, '0');
+
+      if (cuenta === 0) {
+        clearInterval(intervalo);
+        sigPregunta();
+      }
+
+      cuenta--;
+    }, 1000);
+  });
+}
+
+setTimeout(() => cuentaAtras(preguntas), 1000);
