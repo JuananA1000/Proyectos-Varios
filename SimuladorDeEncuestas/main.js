@@ -1,8 +1,8 @@
 const preguntas = document.querySelectorAll('.pregunta');
 const anterior = document.getElementById('btn-anterior');
-const siguiente = document.getElementById('btn-siguiente');
+const playBtn = document.getElementById('btn-play');
 
-siguiente.addEventListener('click', sigPregunta);
+playBtn.addEventListener('click', play);
 
 function sigPregunta() {
   for (let i = 0; i < preguntas.length; i++) {
@@ -13,28 +13,28 @@ function sigPregunta() {
       break;
     }
   }
-  console.log('Siguiente');
 }
 
 function cuentaAtras() {
-  preguntas.forEach((divPregunta) => {
-    let cuenta = 5;
-    const divCuentaAtras = document.createElement('div');
-    divCuentaAtras.textContent = '05';
+  let divsCuenta = document.querySelectorAll('.cuenta-atras');
 
-    divPregunta.appendChild(divCuentaAtras);
+  divsCuenta.forEach((cuenta) => {
+    cuenta.innerHTML = '05';
 
-    const intervalo = setInterval(() => {
-      divCuentaAtras.textContent = cuenta.toString().padStart(2, '0');
+    let cuentaActual = parseInt(cuenta.innerHTML);
+    let intervalo = setInterval(function () {
+      cuentaActual--;
+      cuenta.innerHTML = (cuentaActual < 10 ? '0' : '') + cuentaActual;
 
-      if (cuenta === 0) {
+      if (cuentaActual === 0) {
         clearInterval(intervalo);
-        sigPregunta();
       }
-
-      cuenta--;
     }, 1000);
   });
 }
 
-setTimeout(() => cuentaAtras(preguntas), 1000);
+function play() {
+  playBtn.style.display = 'none';
+
+  cuentaAtras();
+}

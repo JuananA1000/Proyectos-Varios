@@ -10,7 +10,8 @@
     <h1>Simulador de Encuestas</h1>
     <div class="pregunta q1">
       <form>
-        <h3>1. Capital de España </h3>
+        <h3 class="cuenta-atras">00</h3>
+        <h3>1. Capital de España</h3>
         <input type="radio" id="paris" value="paris" />
         <label for="paris">París</label><br />
         <input type="radio" id="madrid" value="madrid" />
@@ -22,7 +23,8 @@
 
     <div class="pregunta q2 oculto">
       <form>
-        <h3>2. Rojo + Amarillo </h3>
+        <h3 class="cuenta-atras">00</h3>
+        <h3>2. Rojo + Amarillo</h3>
         <input type="radio" id="naranja" value="naranja" />
         <label for="naranja">Naranja</label><br />
         <input type="radio" id="verde" value="verde" />
@@ -34,7 +36,8 @@
 
     <div class="pregunta q3 oculto">
       <form>
-        <h3>3. Figura con 4 lados </h3>
+        <h3 class="cuenta-atras">00</h3>
+        <h3>3. Figura con 4 lados</h3>
         <input type="radio" id="triangulo" value="triangulo" />
         <label for="triangulo">Triángulo</label><br />
         <input type="radio" id="cuadrado" value="cuadrado" />
@@ -44,10 +47,7 @@
       </form>
     </div>
 
-    <div class="buttons">
-      <button id="btn-anterior"><</button>
-      <button id="btn-siguiente">></button>
-    </div>
+    <button id="btn-play">></button>
 
     <script src="main.js"></script>
   </body>
