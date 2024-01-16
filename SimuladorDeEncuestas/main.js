@@ -35,6 +35,5 @@ function cuentaAtras() {
 
 function play() {
   playBtn.style.display = 'none';
-
   cuentaAtras();
 }
