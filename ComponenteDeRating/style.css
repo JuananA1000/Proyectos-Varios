@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Twinkle+Star&display=swap');
+
+body {
+  background-color: rgb(45, 122, 45);
+  font-family: Twinkle Star;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.rating {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.item {
+  background-color: rgb(198, 198, 198);
+  mask-image: url(images/star.svg);
+  width: 50px;
+  height: 49px;
+  cursor: pointer;
+}
+
+.item-full {
+  background-color: rgb(255, 237, 35);
+}
