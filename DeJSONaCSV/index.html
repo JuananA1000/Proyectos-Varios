@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>De JSON a CSV</title>
+  </head>
+  <body>
+    <h1>De JSON a CSV</h1>
+    <div id="app">
+      <div class="form">
+        <div class="left">
+          <h3>JSON</h3>
+          <textarea id="jsonForm" cols="30" rows="10"></textarea>
+          <small>Click aquí para copiar copiar ejemplo de JSON</small>
+        </div>
+        <div class="right">
+          <h3>CSV</h3>
+          <textarea id="csvForm" cols="30" rows="10"></textarea>
+        </div>
+      </div>
+      <button id="bConvert">Convertir</button>
+    </div>
+
+    <pre>
+    [
+      {
+        "id": 0,
+        "nombre": "Juanan",
+        "edad": 29
+      },
+      {
+        "id": 1,
+        "nombre": "Marcos",
+        "edad": 29
+      }
+    ]
+    </pre>
+
+    <script src="main.js"></script>
+  </body>
+</html>

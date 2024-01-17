@@ -1,0 +1,59 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#app {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  gap: 10px;
+  width: 80%;
+}
+
+.left,
+.right {
+  width: 50%;
+}
+
+textarea {
+  width: 100%;
+  height: 500px;
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 20px;
+  resize: none;
+}
+
+#bConvert {
+  background-color: #0084ff;
+  padding: 10px 20px;
+  color: #ffffff;
+  border: none;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: 21px;
+}
+
+#bConvert:hover {
+  background-color: #007aec;
+  cursor: pointer;
+}
+
+small:hover{
+  cursor: default;
+  color: #b8b8b8;
+}
+
+pre{
+  display: none;
+}
