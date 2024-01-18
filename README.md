@@ -14,7 +14,17 @@ En este repositorio se han desarrollado los siguientes proyectos:
 
 - **Cara o Cruz**: Crearemos una app que, con un botón tire una moneda al aire, con un contador de cuántas caras y cruces hay. Este es el [tutorial](https://youtu.be/-o-H1Ecqo_M?si=FcNrSJs_Dw1jjJBn).
 
+- **Componente de rating**: muy simple, 5 estrellas que al pasar por encima de cada una, se van pintando de un color, al hacer click en cualquiera de ellas, se rellenan
+
+- **Componente de Tags**: un elemento input de texto que al pulsar ENTER, crea un tag como en cualquier tienda online, con un aspa para eliminarlos.
+
+- **De JSON a CSV**: crea una aplicación con dos recuadros, en el primero, pegarás un objeto JSON y al pulsar en el botón **Convertir**, este pasa a CSV.
+
+- **Input con máscara**: con la interfaz de una tarjeta de crédito, crearemos una app con tres campos con máscara: el primero permitirá escribir 16 números en grupos de 45, separados por guion. el segundo, 2 parejas de números separados por ‘/’, y el tercero, únicamente 3 cifras
+
 - **Metrónomo**: haremos una réplica de una app de un metrónomo. Únicamente con compases de 4×4 pero, con selector de velocidad, desde 30bpm hasta 400, por ejemplo.
+
+- **Pomodoro con Tareas**: una lista de tareas con un botón de Comenzar. Al pulsar este botón, arrancará un cronómetro.
 
 - **Sala de cine**: Con esta [interfaz](https://github.com/bradtraversy/vanillawebprojects/tree/master/movie-seat-booking) que simula una maquina de compra de entradas seleccionaremos el sitio de la sala en que queremos sentarnos, número de entradas, etc…
 
@@ -25,6 +35,8 @@ En este repositorio se han desarrollado los siguientes proyectos:
 - **Sopa de letras**: De esto no hay tutorial, pero hay [animación](https://twitter.com/trunarla/status/1726653310088945979?t=ceDh5vFXyQXVadc5syJqbg&s=19). La idea es que, en el momento que encontremos una palabra, pincharemos en la primera letra y la palabra se irá subrayando hasta que, el subrayado se desactive con el segundo click. A medida que pasemos por encima de cada letra, la palabra ira apareciendo en la parte de abajo de la sopa de letras.
 
 - **Spotify**: Realizaremos un pequeño reproductor de música con 3 canciones de muestra. [Aquí](https://youtu.be/KndQpfPkOOY?si=I6lp5b3mqLj4szyG) hay un tutorial de cómo hacerlo.
+
+- **Teclado Virtual**: distribuiiremos por la pantalla varias teclas, formando un teclado. Encima del teclado habrá una pequeña pantalla para escribir
 
 - **Tirar Dado**: Elaboraremos una app en que tiraremos un dado de 6 caras: [Tutorial](https://youtu.be/HuEBqPpQkMw?si=s6ip9IdcxXHGTDjY)
 
