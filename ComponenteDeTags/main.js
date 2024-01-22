@@ -32,7 +32,7 @@ inputTag.addEventListener('keydown', (e) => {
       renderTags();
     }
   } else if (
-    // TUTORIAL: lista de keys: https://www.toptal.com/developers/keycode/table-of-all-keycodes
+    // Lista de keys: https://www.toptal.com/developers/keycode/table-of-all-keycodes
     e.key === 'Backspace' &&
     inputTag.textContent === '' &&
     tags.length > 0
