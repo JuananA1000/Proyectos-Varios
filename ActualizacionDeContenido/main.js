@@ -20,6 +20,8 @@ function obtenerFrase() {
         if (traduccion) {
           frase.innerHTML = `${traduccion}`;
         } else {
+          frase.classList.remove('frase');
+          frase.classList.add('noTr');
           frase.innerHTML = 'No se pudo traducir la frase.';
         }
       });
@@ -30,6 +32,8 @@ function obtenerFrase() {
 }
 
 function stop() {
+  frase.classList.remove('noTr');
+  frase.classList.add('frase');
   frase.innerHTML = 'Frase';
   clearInterval(intervalId); // Detener el intervalo usando clearInterval y pasando el identificador
 }
