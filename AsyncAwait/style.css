@@ -1,0 +1,68 @@
+.getters {
+  display: flex;
+}
+
+#getDataEl {
+  background-color: rgb(255, 235, 83);
+  margin-right: 10px;
+}
+
+#getDataTimeoutEl {
+  background-color: rgb(255, 235, 83);
+  margin-right: 10px;
+}
+
+#getDataPromiseEl {
+  background-color: rgb(255, 235, 83);
+  margin-right: 10px;
+}
+
+#asyncFetchingEl {
+  background-color: rgb(255, 235, 83);
+  margin-right: 10px;
+}
+
+.loaderTimeOut {
+  width: fit-content;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 30px;
+  clip-path: inset(0 3ch 0 0);
+  animation: l4 1s steps(4) infinite;
+}
+.loaderTimeOut:before {
+  content: '2 segundos...';
+}
+
+.loader {
+  width: 45px;
+  aspect-ratio: 1;
+  --c: no-repeat linear-gradient(#000 0 0);
+  background: var(--c) 0% 50%, var(--c) 50% 50%, var(--c) 100% 50%;
+  background-size: 20% 100%;
+  animation: l1 1s infinite linear;
+}
+
+@keyframes l1 {
+  0% {
+    background-size: 20% 100%, 20% 100%, 20% 100%;
+  }
+  33% {
+    background-size: 20% 10%, 20% 100%, 20% 100%;
+  }
+  50% {
+    background-size: 20% 100%, 20% 10%, 20% 100%;
+  }
+  66% {
+    background-size: 20% 100%, 20% 100%, 20% 10%;
+  }
+  100% {
+    background-size: 20% 100%, 20% 100%, 20% 100%;
+  }
+}
+
+@keyframes l4 {
+  to {
+    clip-path: inset(0 -1ch 0 0);
+  }
+}
