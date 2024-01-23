@@ -3,6 +3,11 @@
 
 En este repositorio se han desarrollado los siguientes proyectos:
 
+|   Proyecto    | Servidor de Despliegue | Link  |
+| ------------- |:----------------------:| -----:|
+| Ahorcado      | ---------------------- | ----- |
+| Calculadora de cócteles | ---------------------- | ----- |
+| Cara o Cruz | ---------------------- | ----- |
 
 - **Actualización de contenidos automática**: Crea una sección que muestre actualizaciones de contenido (como  noticias, precios de acciones, actualizaciones de redes sociales) que se actualicen automáticamente cada cierto tiempo utilizando `setInterval()` para hacer peticiones y actualizar la información. La información que utilizaremos la sacaremos de esta [API](https://api.chucknorris.io/) de Chuck Norris, asi simplificamos las cosas. Además, como esta API está en inglés, la traduciremos al español.
 
@@ -20,7 +25,10 @@ En este repositorio se han desarrollado los siguientes proyectos:
 
 - **De JSON a CSV**: crea una aplicación con dos recuadros, en el primero, pegarás un objeto JSON y al pulsar en el botón **Convertir**, este pasa a CSV.
 
-- **Input con máscara**: con la interfaz de una tarjeta de crédito, crearemos una app con tres campos con máscara: el primero permitirá escribir 16 números en grupos de 45, separados por guion. el segundo, 2 parejas de números separados por ‘/’, y el tercero, únicamente 3 cifras
+- **Input con máscara**: con la interfaz de una tarjeta de crédito, crearemos una app con tres campos con máscara:
+  - el primero permitirá escribir 16 números en grupos de 4, separados por '-'
+  - el segundo, 2 parejas de números separados por ‘/’
+  - el tercero, únicamente 3 cifras
 
 - **Metrónomo**: haremos una réplica de una app de un metrónomo. Únicamente con compases de 4×4 pero, con selector de velocidad, desde 30bpm hasta 400, por ejemplo.
 
