@@ -1,6 +1,7 @@
 const contenido = document.querySelector('.contenido');
 const loader = document.querySelector('.loader');
 const loaderTimeOut = document.querySelector('.loaderTimeOut');
+const button = document.querySelector('button').addEventListener('click',()=>   document.location.reload());
 
 const getDataEl = document.getElementById('getDataEl');
 const getDataTimeoutEl = document.getElementById('getDataTimeoutEl');
