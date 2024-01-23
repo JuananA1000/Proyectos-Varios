@@ -47,7 +47,7 @@ function getDataTimeout() {
       parrafo.textContent = `ID ${item.id}: ${item.frase}`;
       getDataTimeoutEl.appendChild(parrafo);
     });
-    
+
     console.log('DATA CON TIMEOUT: ', data);
     return data;
   }, 2000);
