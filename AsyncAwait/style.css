@@ -1,3 +1,28 @@
+body {
+  min-height: 70vh; /* Modifica la altura según tus necesidades */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  background: #2ecc71;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+  background: #27ae60;
+}
+
 .getters {
   width: 100%;
   display: flex;
@@ -8,16 +33,34 @@
 #getDataTimeoutEl,
 #getDataPromiseEl,
 #asyncFetchingEl {
-  background-color: rgb(255, 235, 83);
-  border-radius: 10px;
-  width: 300px;
-  padding-left: 10px;
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid #3498db;
+  border-radius: 15px;
+  /* text-align: center; */
+  position: relative;
+  background: linear-gradient(to bottom, #3498db, #2980b9);
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  justify-content: center;
 }
 
-/* LOADERS */
+/*------------------------------------------------------------------------------------------------------------------- */
+/*                                                    LOADERS                                                         */
+/*------------------------------------------------------------------------------------------------------------------- */
+
+.loader {
+  width: 45px;
+  aspect-ratio: 1;
+  --c: no-repeat linear-gradient(#000 0 0);
+  background: var(--c) 0% 50%, var(--c) 50% 50%, var(--c) 100% 50%;
+  background-size: 20% 100%;
+  animation: l1 1s infinite linear;
+  margin: auto;
+}
 
 .loaderTimeOut {
-  width: fit-content;
   font-weight: bold;
   font-family: monospace;
   font-size: 30px;
@@ -28,14 +71,19 @@
   content: '2 segundos...';
 }
 
-.loader {
-  width: 45px;
+.loaderCircle {
+  margin: auto;
+  width: 50px;
   aspect-ratio: 1;
-  --c: no-repeat linear-gradient(#000 0 0);
-  background: var(--c) 0% 50%, var(--c) 50% 50%, var(--c) 100% 50%;
-  background-size: 20% 100%;
-  animation: l1 1s infinite linear;
+  border-radius: 50%;
+  border: 8px solid;
+  border-color: #000 #0000;
+  animation: l5 1s infinite;
 }
+
+/*------------------------------------------------------------------------------------------------------------------- */
+/*                                                  ANIMACIONES LOADERS                                               */
+/*------------------------------------------------------------------------------------------------------------------- */
 
 @keyframes l1 {
   0% {
@@ -61,13 +109,8 @@
   }
 }
 
-/* HTML: <div class="loader"></div> */
-.loaderCircle {
-  width: 50px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  border: 8px solid;
-  border-color: #000 #0000;
-  animation: l5 1s infinite;
+@keyframes l5 {
+  to {
+    transform: rotate(0.5turn);
+  }
 }
-@keyframes l5 {to{transform: rotate(.5turn)}}
