@@ -1,12 +1,13 @@
 const contenido = document.querySelector('.contenido');
 const loader = document.querySelector('.loader');
 const loaderTimeOut = document.querySelector('.loaderTimeOut');
-const button = document.querySelector('button').addEventListener('click',()=>   document.location.reload());
+const loaderCircle = document.querySelector('.loaderCircle');
+const button = document.querySelector('button').addEventListener('click', () => document.location.reload());
 
 const getDataEl = document.getElementById('getDataEl');
 const getDataTimeoutEl = document.getElementById('getDataTimeoutEl');
 const getDataPromiseEl = document.getElementById('getDataPromiseEl');
-const getDasyncFetchingElataEl = document.getElementById('asyncFetchingEl');
+const getDasyncFetchingEl = document.getElementById('asyncFetchingEl');
 
 const data = [
   {
@@ -71,13 +72,21 @@ function getDataPromise() {
         getDataPromiseEl.appendChild(parrafo);
       });
       resolve(data);
-    }, 2000);
+    }, 3000);
   });
 }
 
 // Retornar datos de manera ASÍNCRONA
 async function asyncFetching() {
   const frases = await getDataPromise();
+  loaderCircle.style.display = 'none';
+ 
+  for (const frase of frases) {
+    const parrafo = document.createElement('p');
+    parrafo.textContent = `ID ${frase.id}: ${frase.frase}`;
+    getDasyncFetchingEl.appendChild(parrafo);
+  }
+
   console.log('FETCHING FRASES: ', frases);
 }
 

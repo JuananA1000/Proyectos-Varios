@@ -1,27 +1,20 @@
 .getters {
-
-  width: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
-#getDataEl {
-  background-color: rgb(255, 235, 83);
-  margin-right: 10px;
-}
-
-#getDataTimeoutEl {
-  background-color: rgb(255, 235, 83);
-  margin-right: 10px;
-}
-
-#getDataPromiseEl {
-  background-color: rgb(255, 235, 83);
-  margin-right: 10px;
-}
-
+#getDataEl,
+#getDataTimeoutEl,
+#getDataPromiseEl,
 #asyncFetchingEl {
   background-color: rgb(255, 235, 83);
-  margin-right: 10px;
+  border-radius: 10px;
+  width: 300px;
+  padding-left: 10px;
 }
+
+/* LOADERS */
 
 .loaderTimeOut {
   width: fit-content;
@@ -67,3 +60,14 @@
     clip-path: inset(0 -1ch 0 0);
   }
 }
+
+/* HTML: <div class="loader"></div> */
+.loaderCircle {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid;
+  border-color: #000 #0000;
+  animation: l5 1s infinite;
+}
+@keyframes l5 {to{transform: rotate(.5turn)}}
