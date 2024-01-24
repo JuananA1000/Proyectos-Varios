@@ -59,18 +59,13 @@ function getDataTimeout() {
 function getDataPromise() {
   return new Promise((resolve, reject) => {
     loader.style.display = 'block';
+    
     // Una buena práctica es comprobar, en primer lugar, si hay datos...
     if (data.length === 0) {
       reject(new Error('No hay datos'));
     }
     // ...después, continuamos con nuestro código
     setTimeout(() => {
-      loader.style.display = 'none';
-      data.forEach((item) => {
-        const parrafo = document.createElement('p');
-        parrafo.textContent = `ID ${item.id}: ${item.frase}`;
-        getDataPromiseEl.appendChild(parrafo);
-      });
       resolve(data);
     }, 3000);
   });
@@ -80,7 +75,7 @@ function getDataPromise() {
 async function asyncFetching() {
   const frases = await getDataPromise();
   loaderCircle.style.display = 'none';
- 
+
   for (const frase of frases) {
     const parrafo = document.createElement('p');
     parrafo.textContent = `ID ${frase.id}: ${frase.frase}`;
@@ -103,7 +98,15 @@ console.log(getDataTimeout());
 
 getDataPromise()
   // Ese parámetro 'data', se suele llamar 'response', pero para practicar, nos da igual
-  .then((data) => console.log('DATA CON PROMESA: ', data))
+  .then((data) => {
+    loader.style.display = 'none';
+    data.forEach((item) => {
+      const parrafo = document.createElement('p');
+      parrafo.textContent = `ID ${item.id}: ${item.frase}`;
+      getDataPromiseEl.appendChild(parrafo);
+    });
+    console.log('DATA CON PROMESA: ', data);
+  })
   // Este error aparecerá si el array de datos está vacío
   .catch((error) => console.log('ERROR: ', error.message));
 
