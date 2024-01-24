@@ -1,4 +1,10 @@
+@font-face {
+  font-family: JetBrains;
+  src: url(fonts/JetBrainsMono.ttf);
+}
+
 body {
+  font-family: JetBrains;
   min-height: 70vh; /* Modifica la altura según tus necesidades */
   display: flex;
   flex-direction: column;
