@@ -1,4 +1,3 @@
-const contenido = document.querySelector('.contenido');
 const loader = document.querySelector('.loader');
 const loaderTimeOut = document.querySelector('.loaderTimeOut');
 const loaderCircle = document.querySelector('.loaderCircle');
@@ -59,7 +58,7 @@ function getDataTimeout() {
 function getDataPromise() {
   return new Promise((resolve, reject) => {
     loader.style.display = 'block';
-    
+
     // Una buena práctica es comprobar, en primer lugar, si hay datos...
     if (data.length === 0) {
       reject(new Error('No hay datos'));
@@ -91,8 +90,8 @@ async function asyncFetching() {
 
 getData();
 /* 
-  Esto no se ejecuta, porque, estamos haciendo una llamada DIRECTA a la función, pero nuestra función tiene un retardo
-  de 2 segundos. Es como querer comer ANTES de cocinar.
+  Esto aparecerá como UNDEFINED, porque, estamos haciendo una llamada DIRECTA a una función que tiene un retardo de 2
+  segundos. Es como querer comer ANTES de cocinar.
 */
 console.log(getDataTimeout());
 
