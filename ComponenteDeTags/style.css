@@ -9,6 +9,20 @@ p {
   margin-top: 70px;
 }
 
+#enter {
+  background-color: #b2b2b2;
+  padding: 10px;
+  border-radius: 4px;
+  margin-right: 10px;
+  box-shadow: 5px 5px #888888;
+}
+
+#enter:hover {
+  background-color: #9a9a9a;
+  box-shadow: 5px 5px #6b6b6b;
+  cursor: none;
+}
+
 #app {
   min-height: 40vh;
   display: flex;
