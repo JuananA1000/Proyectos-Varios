@@ -67,7 +67,6 @@ function renderTasks() {
 
   closeButtons.forEach((closeButton) => {
     closeButton.addEventListener('click', () => {
-      
       console.log('ELIMINAR');
     });
   });
@@ -131,9 +130,6 @@ function renderTime() {
   const min = parseInt(time / 60);
   const sec = parseInt(time % 60);
 
-  /*
-        Si los minutos o segundos son menores que 10, que ponga '0',
-        si no, que no ponga nada
-    */
+  //  Si los minutos o segundos son menores que 10, que ponga '0', si no, que no ponga nada
   timeDiv.textContent = `${min < 10 ? '0' : ''}${min}:${sec < 10 ? '0' : ''}${sec}`;
 }
