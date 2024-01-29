@@ -58,7 +58,7 @@ p {
 
 .tag-item {
   border: solid 1px #ccc;
-  background-color: #eee;
+  background-color: #bebebe;
   display: flex;
   padding: 5px;
   border-radius: 3px;
@@ -77,5 +77,5 @@ p {
 }
 
 .tag-item button:hover {
-  background-color: #ccc;
+  background-color: #a3a3a3;
 }
