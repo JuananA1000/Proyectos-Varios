@@ -75,7 +75,7 @@ button:hover {
   animation: l4 1s steps(4) infinite;
 }
 .loaderTimeOut:before {
-  content: 'Cargando...';
+  content: 'GetDataTimeout...';
 }
 
 .loaderCircle {
