@@ -35,22 +35,25 @@ function createTask(value) {
 function renderTasks() {
   const html = tasks.map((task) => {
     return `    
-            <div class="task">
-                <div class="completed">${
-                  task.completed
-                    ? `<span class="done">Hecho</span>`
-                    : `<button class="start-button" data-id="${task.id}">Comenzar</button>`
-                }
-                </div>
-                <div class="title">${task.title}</div>
-            </div>
-        `;
+      <div class="task">
+        <div class="completed">
+          ${
+            task.completed
+              ? `<span class="done">Hecho</span> `
+              : `<button class="start-button" data-id="${task.id}">Comenzar</button>`
+          }
+        </div>
+        <div class="title">${task.title}</div>
+        ${task.completed ? `<button class="close-button">\u2716</button> ` : ''}
+      </div>
+    `;
   });
 
   const taskContainer = document.querySelector('#tasks');
   taskContainer.innerHTML = html.join('');
 
   const startButtons = document.querySelectorAll('.task .start-button');
+  const closeButtons = document.querySelectorAll('.task .close-button');
 
   startButtons.forEach((startButton) => {
     startButton.addEventListener('click', () => {
@@ -59,6 +62,13 @@ function renderTasks() {
         startButtonHandler(startButton.getAttribute('data-id'));
         startButton.textContent = 'En progreso...';
       }
+    });
+  });
+
+  closeButtons.forEach((closeButton) => {
+    closeButton.addEventListener('click', () => {
+      
+      console.log('ELIMINAR');
     });
   });
 }
