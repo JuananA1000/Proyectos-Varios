@@ -5,7 +5,7 @@ En este repositorio se han desarrollado los siguientes proyectos:
 
 |   Proyecto                  |                   Link de despliegue                   |
 | :---------------------------|:------------------------------------------------------:|
-| Actualización de contenidos | [Demo] (https://actualizacion-automatica.netlify.app/) |
+| Actualización de contenidos | [Demo](https://actualizacion-automatica.netlify.app/)  |
 | Ahorcado                    | [Demo](https://programador-ahorcado.netlify.app/)      |
 | Arkanoid                    | [Demo](https://arkanoidja.netlify.app/)                |
 | AsyncAwait                  | [Demo](https://asincronia-en-js.netlify.app/)          |
