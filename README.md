@@ -3,11 +3,11 @@
 
 En este repositorio se han desarrollado los siguientes proyectos:
 
-|   Proyecto              | Servidor de Despliegue | Link  |
-| :-------------          |:----------------------:| -----:|
-| Ahorcado                | Netlify Drop           | ----- |
-| Calculadora de cócteles | Github Pages           | ----- |
-| Cara o Cruz             | Surge                  | ----- |
+|   Proyecto              | Servidor de Despliegue | Link                                              |
+| :-------------          |:----------------------:| -------------------------------------------------:|
+| Ahorcado                | Netlify                | [Demo](https://programador-ahorcado.netlify.app/) |
+| Calculadora de cócteles | Github Pages           | ------------------------------------------------- |
+| Cara o Cruz             | Surge                  | ------------------------------------------------- |
 
 - 📈 **Actualización de contenidos automática**: Crea una sección que muestre actualizaciones de contenido (como  noticias, precios de acciones, actualizaciones de redes sociales) que se actualicen automáticamente cada cierto tiempo utilizando `setInterval()` para hacer peticiones y actualizar la información. La información que utilizaremos la sacaremos de esta [API](https://api.chucknorris.io/) de Chuck Norris, asi simplificamos las cosas. Además, como esta API está en inglés, la traduciremos al español.
 
