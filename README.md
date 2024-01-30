@@ -3,24 +3,24 @@
 
 En este repositorio se han desarrollado los siguientes proyectos:
 
-|   Proyecto                  |                Servidor de Despliegue                |
+|   Proyecto                  |                  Link de despliegue                  |
 | :---------------------------|:----------------------------------------------------:|
-| Actualización de contenidos | ---------------------------------------------------- |
+| Actualización de contenidos | -                                                    |
 | Ahorcado                    | [Demo](https://programador-ahorcado.netlify.app/)    |
-| Arkanoid                    | ---------------------------------------------------- |
-| AsyncAwait                  | ---------------------------------------------------- |
+| Arkanoid                    | -                                                    |
+| AsyncAwait                  | -                                                    |
 | Calculadora de cócteles     | [Demo](https://calculadora-de-cocteles.netlify.app/) |
-| Cara o Cruz                 | ---------------------------------------------------- |
-| Componente de rating        | ---------------------------------------------------- |
-| Componente de tags          | ---------------------------------------------------- |
-| De JSON a CSV               | ---------------------------------------------------- |
-| Input con máscara           | ---------------------------------------------------- |
-| Sala de cine                | ---------------------------------------------------- |
-| Snake                       | ---------------------------------------------------- |
-| Skeleton                    | ---------------------------------------------------- |
-| Teclado Virtual             | ---------------------------------------------------- |
-| Tirar Dado                  | ---------------------------------------------------- |
-| Tres en Raya                | ---------------------------------------------------- |
+| Cara o Cruz                 | -                                                    |
+| Componente de rating        | -                                                    |
+| Componente de tags          | -                                                    |
+| De JSON a CSV               | -                                                    |
+| Input con máscara           | -                                                    |
+| Sala de cine                | -                                                    |
+| Snake                       | -                                                    |
+| Skeleton                    | -                                                    |
+| Teclado Virtual             | -                                                    |
+| Tirar Dado                  | -                                                    |
+| Tres en Raya                | -                                                    |
 
 - 📈 **Actualización de contenidos automática**: Crea una sección que muestre actualizaciones de contenido (como  noticias, precios de acciones, actualizaciones de redes sociales) que se actualicen automáticamente cada cierto tiempo utilizando `setInterval()` para hacer peticiones y actualizar la información. La información que utilizaremos la sacaremos de esta [API](https://api.chucknorris.io/) de Chuck Norris, asi simplificamos las cosas. Además, como esta API está en inglés, la traduciremos al español.
 
@@ -28,7 +28,7 @@ En este repositorio se han desarrollado los siguientes proyectos:
 
 - 👾 **Arkanoid**: Con este tutorial haremos un Arkanoid, pero además, le añadiremos la posibilidad de poder pausar el juego y, cambiaremos el `alert()` por defecto, por un cuadro personalizado que aparezca centrado en la pantalla. este cuadro, tendrá dos botones, reiniciar y reanudar.
 
--   **AsyncAwait**: Un proyecto simple, para aprender los fundamentos de la *asincronía* en JavaScript, realizado con la ayuda del
+- 🕙 **AsyncAwait**: Un proyecto simple, para aprender los fundamentos de la *asincronía* en JavaScript, realizado con la ayuda del
 [tutorial](https://youtu.be/6O8ax3JYboc?si=wDu_-0WcuOyYRkCJ) de Carlos Azaústre
 
 - 🍸 **Calculadora de cócteles**: Elaboraremos una app en que sumaremos una serie de ingredientes, dispuestos en forma de tabla con imágenes, como las básculas de la frutería. Si el cóctel existe, se devolverá; si no, devolveremos un *prueba otra vez* o lo que sea. Diseñaremos esta app haciendo uso de esta [API](https://www.thecocktaildb.com/api.php).
