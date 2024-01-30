@@ -3,13 +3,13 @@
 
 En este repositorio se han desarrollado los siguientes proyectos:
 
-|   Proyecto                  |                  Link de despliegue                  |
-| :---------------------------|:----------------------------------------------------:|
-| Actualización de contenidos | -                                                    |
-| Ahorcado                    | [Demo](https://programador-ahorcado.netlify.app/)    |
-| Arkanoid                    | -                                                    |
-| AsyncAwait                  | -                                                    |
-| Calculadora de cócteles     | [Demo](https://calculadora-de-cocteles.netlify.app/) |
+|   Proyecto                  |                   Link de despliegue                   |
+| :---------------------------|:------------------------------------------------------:|
+| Actualización de contenidos | [Demo] (https://actualizacion-automatica.netlify.app/) |
+| Ahorcado                    | [Demo](https://programador-ahorcado.netlify.app/)      |
+| Arkanoid                    | [Demo](https://arkanoidja.netlify.app/)                |
+| AsyncAwait                  | [Demo](https://asincronia-en-js.netlify.app/)          |
+| Calculadora de cócteles     | [Demo](https://calculadora-de-cocteles.netlify.app/)   |
 | Cara o Cruz                 | -                                                    |
 | Componente de rating        | -                                                    |
 | Componente de tags          | -                                                    |
