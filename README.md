@@ -3,11 +3,24 @@
 
 En este repositorio se han desarrollado los siguientes proyectos:
 
-|   Proyecto              | Servidor de Despliegue | Link                                              |
-| :-------------          |:----------------------:| -------------------------------------------------:|
-| Ahorcado                | Netlify                | [Demo](https://programador-ahorcado.netlify.app/) |
-| Calculadora de cócteles | Github Pages           | ------------------------------------------------- |
-| Cara o Cruz             | Surge                  | ------------------------------------------------- |
+|   Proyecto                  |                Servidor de Despliegue                |
+| :---------------------------|:----------------------------------------------------:|
+| Actualización de contenidos | ---------------------------------------------------- |
+| Ahorcado                    | [Demo](https://programador-ahorcado.netlify.app/)    |
+| Arkanoid                    | ---------------------------------------------------- |
+| AsyncAwait                  | ---------------------------------------------------- |
+| Calculadora de cócteles     | [Demo](https://calculadora-de-cocteles.netlify.app/) |
+| Cara o Cruz                 | ---------------------------------------------------- |
+| Componente de rating        | ---------------------------------------------------- |
+| Componente de tags          | ---------------------------------------------------- |
+| De JSON a CSV               | ---------------------------------------------------- |
+| Input con máscara           | ---------------------------------------------------- |
+| Sala de cine                | ---------------------------------------------------- |
+| Snake                       | ---------------------------------------------------- |
+| Skeleton                    | ---------------------------------------------------- |
+| Teclado Virtual             | ---------------------------------------------------- |
+| Tirar Dado                  | ---------------------------------------------------- |
+| Tres en Raya                | ---------------------------------------------------- |
 
 - 📈 **Actualización de contenidos automática**: Crea una sección que muestre actualizaciones de contenido (como  noticias, precios de acciones, actualizaciones de redes sociales) que se actualicen automáticamente cada cierto tiempo utilizando `setInterval()` para hacer peticiones y actualizar la información. La información que utilizaremos la sacaremos de esta [API](https://api.chucknorris.io/) de Chuck Norris, asi simplificamos las cosas. Además, como esta API está en inglés, la traduciremos al español.
 
