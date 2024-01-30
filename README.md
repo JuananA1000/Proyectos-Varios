@@ -35,8 +35,6 @@ En este repositorio se han desarrollado los siguientes proyectos:
 
 - 🥁 **Metrónomo**: haremos una réplica de una app de un metrónomo. Únicamente con compases de 4×4 pero, con selector de velocidad, desde 30bpm hasta 400, por ejemplo.
 
-- ⏲️ **Pomodoro con Tareas**: una lista de tareas con un botón de Comenzar. Al pulsar este botón, arrancará un cronómetro.
-
 - 🎥 **Sala de cine**: Con esta [interfaz](https://github.com/bradtraversy/vanillawebprojects/tree/master/movie-seat-booking) que simula una maquina de compra de entradas seleccionaremos el sitio de la sala en que queremos sentarnos, número de entradas, etc…
 
 - 🐍 **Snake**: un juego clásico. Con este [tutorial](https://youtu.be/wM7eMJ26kc8?si=xjF-f1hMDhmP9y2l) lo replicaremos. También le construiremos una función de pausar el juego.
