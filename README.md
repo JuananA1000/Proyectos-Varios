@@ -13,7 +13,7 @@ En este repositorio se han desarrollado los siguientes proyectos:
 | Componente de rating        | [Demo](https://comp-rating.netlify.app/)              |
 | Componente de tags          | [Demo](https://componente-de-tags.netlify.app/)       |
 | De JSON a CSV               | [Demo](https://json-a-csv.netlify.app)                |
-| Input con máscara           | -                                                     |
+| Input con máscara           | [Demo](https://input-con-mascara.netlify.app)         |
 | Programador Ahorcado        | [Demo](https://programador-ahorcado.netlify.app/)     |
 | Sala de cine                | -                                                     |
 | Snake                       | -                                                     |
