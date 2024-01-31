@@ -20,7 +20,7 @@ En este repositorio se han desarrollado los siguientes proyectos:
 | Snake                       | [Demo](https://snakeja.netlify.app)                   |
 | Teclado Virtual             | [Demo](https://teclado-virt.netlify.app/)             |
 | Tirar Dado                  | [Demo](https://tirar-dado.netlify.app/)               |
-| Tres en Raya                | -                                                     |
+| Tres en Raya                | [Demo](https://tres-en-raya-ja.netlify.app)           |
 
 - 📈 **Actualización de contenidos automática**: Crea una sección que muestre actualizaciones de contenido (como  noticias, precios de acciones, actualizaciones de redes sociales) que se actualicen automáticamente cada cierto tiempo utilizando `setInterval()` para hacer peticiones y actualizar la información. La información que utilizaremos la sacaremos de esta [API](https://api.chucknorris.io/) de Chuck Norris, asi simplificamos las cosas. Además, como esta API está en inglés, la traduciremos al español.
 
@@ -63,6 +63,3 @@ En este repositorio se han desarrollado los siguientes proyectos:
 - 🎲 **Tirar Dado**: Elaboraremos una app en que tiraremos un dado de 6 caras: [Tutorial](https://youtu.be/HuEBqPpQkMw?si=s6ip9IdcxXHGTDjY)
 
 - ⬛ **Tres en Raya**: haremos, con la ayuda de este [tutorial](https://youtu.be/MgtGHfdpigU?si=W6AAbt5Whq1DJEvi), un Tres en Raya, pero cambiaremos la “x” y la “o” por iconos SVG, [aquí](https://youtu.be/8Zp6jUgjzns?si=2LoJP_C155wpsd7u) puede haber alguna pista
-
-
-
