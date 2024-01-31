@@ -15,7 +15,7 @@ En este repositorio se han desarrollado los siguientes proyectos:
 | De JSON a CSV               | [Demo](https://json-a-csv.netlify.app)                |
 | Input con máscara           | [Demo](https://input-con-mascara.netlify.app)         |
 | Programador Ahorcado        | [Demo](https://programador-ahorcado.netlify.app/)     |
-| Sala de cine                | -                                                     |
+| Sala de cine                | [Demo](https://sala-de-cine.netlify.app)              |
 | Snake                       | -                                                     |
 | Skeleton                    | -                                                     |
 | Teclado Virtual             | -                                                     |
