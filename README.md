@@ -18,7 +18,7 @@ En este repositorio se han desarrollado los siguientes proyectos:
 | Sala de cine                | [Demo](https://sala-de-cine.netlify.app)              |
 | Skeleton                    | [Demo](https://skeleton-load.netlify.app/)            |
 | Snake                       | [Demo](https://snakeja.netlify.app)                   |
-| Teclado Virtual             | -                                                     |
+| Teclado Virtual             | [Demo](https://teclado-virt.netlify.app/)             |
 | Tirar Dado                  | -                                                     |
 | Tres en Raya                | -                                                     |
 
