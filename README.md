@@ -16,7 +16,7 @@ En este repositorio se han desarrollado los siguientes proyectos:
 | Input con máscara           | [Demo](https://input-con-mascara.netlify.app)         |
 | Programador Ahorcado        | [Demo](https://programador-ahorcado.netlify.app/)     |
 | Sala de cine                | [Demo](https://sala-de-cine.netlify.app)              |
-| Snake                       | -                                                     |
+| Snake                       | [Demo](https://snakeja.netlify.app)                   |
 | Skeleton                    | -                                                     |
 | Teclado Virtual             | -                                                     |
 | Tirar Dado                  | -                                                     |
