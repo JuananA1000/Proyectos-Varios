@@ -9,7 +9,7 @@ En este repositorio se han desarrollado los siguientes proyectos:
 | Arkanoid                    | [Demo](https://arkanoidja.netlify.app/)               |
 | AsyncAwait                  | [Demo](https://asincronia-en-js.netlify.app/)         |
 | Calculadora de cócteles     | [Demo](https://calculadora-de-cocteles.netlify.app/)  |
-| Cara o Cruz                 | -                                                     |
+| Cara o Cruz                 | [Demo](https://cara-o-cruz.netlify.app/)              |
 | Componente de rating        | -                                                     |
 | Componente de tags          | -                                                     |
 | De JSON a CSV               | -                                                     |
