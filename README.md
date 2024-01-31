@@ -4,7 +4,7 @@
 En este repositorio se han desarrollado los siguientes proyectos:
 
 |   Proyecto                  |                   Link de despliegue                  |
-| :---------------------------|:-----------------------------------------------------:|
+|:----------------------------|:-----------------------------------------------------:|
 | Actualización de contenidos | [Demo](https://actualizacion-automatica.netlify.app/) |
 | Arkanoid                    | [Demo](https://arkanoidja.netlify.app/)               |
 | AsyncAwait                  | [Demo](https://asincronia-en-js.netlify.app/)         |
@@ -16,8 +16,8 @@ En este repositorio se han desarrollado los siguientes proyectos:
 | Input con máscara           | [Demo](https://input-con-mascara.netlify.app)         |
 | Programador Ahorcado        | [Demo](https://programador-ahorcado.netlify.app/)     |
 | Sala de cine                | [Demo](https://sala-de-cine.netlify.app)              |
+| Skeleton                    | [Demo](https://skeleton-load.netlify.app/)            |
 | Snake                       | [Demo](https://snakeja.netlify.app)                   |
-| Skeleton                    | -                                                     |
 | Teclado Virtual             | -                                                     |
 | Tirar Dado                  | -                                                     |
 | Tres en Raya                | -                                                     |
@@ -50,9 +50,9 @@ En este repositorio se han desarrollado los siguientes proyectos:
 
 - 🎥 **Sala de cine**: Con esta [interfaz](https://github.com/bradtraversy/vanillawebprojects/tree/master/movie-seat-booking) que simula una maquina de compra de entradas seleccionaremos el sitio de la sala en que queremos sentarnos, número de entradas, etc…
 
-- 🐍 **Snake**: un juego clásico. Con este [tutorial](https://youtu.be/wM7eMJ26kc8?si=xjF-f1hMDhmP9y2l) lo replicaremos. También le construiremos una función de pausar el juego.
-
 - 💀 **Skeleton**: Aprenderemos a mostrar una plantilla del contenido de nuestra web mientras el servidor responde: [Tutorial](https://www.youtube.com/watch?v=0VEZPkglmy4)
+
+- 🐍 **Snake**: un juego clásico. Con este [tutorial](https://youtu.be/wM7eMJ26kc8?si=xjF-f1hMDhmP9y2l) lo replicaremos. También le construiremos una función de pausar el juego.
 
 - 🔡 **Sopa de letras**: De esto no hay tutorial, pero hay [animación](https://twitter.com/trunarla/status/1726653310088945979?t=ceDh5vFXyQXVadc5syJqbg&s=19). La idea es que, en el momento que encontremos una palabra, pincharemos en la primera letra y la palabra se irá subrayando hasta que, el subrayado se desactive con el segundo click. A medida que pasemos por encima de cada letra, la palabra ira apareciendo en la parte de abajo de la sopa de letras.
 
