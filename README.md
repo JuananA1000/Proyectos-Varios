@@ -13,6 +13,7 @@ En este repositorio se han desarrollado los siguientes proyectos:
 | Componente de rating        | [Demo](https://comp-rating.netlify.app/)              |
 | Componente de tags          | [Demo](https://componente-de-tags.netlify.app/)       |
 | De JSON a CSV               | [Demo](https://json-a-csv.netlify.app)                |
+| Días para un evento         | [Demo](https://dias-para-evento.netlify.app/)         |
 | Input con máscara           | [Demo](https://input-con-mascara.netlify.app)         |
 | Programador Ahorcado        | [Demo](https://programador-ahorcado.netlify.app/)     |
 | Sala de cine                | [Demo](https://sala-de-cine.netlify.app)              |
@@ -40,6 +41,9 @@ En este repositorio se han desarrollado los siguientes proyectos:
 - #️⃣ **Componente de Tags**: un elemento input de texto que al pulsar ENTER, crea un tag como en cualquier tienda online, con un aspa para eliminarlos.
 
 - 🔄 **De JSON a CSV**: crea una aplicación con dos recuadros, en el primero, pegarás un objeto JSON y al pulsar en el botón **Convertir**, este pasa a CSV.
+
+- 🔄 **Días para un evento**: crea una pequeña lista de tareas en que, al añadir, aparecerá también el número de dias que faltan para dicho evento,
+además, en cada tarea, añadiremos un botón rojo para eliminarlas.
 
 - 💳 **Input con máscara**: con la interfaz de una tarjeta de crédito, crearemos una app con tres campos con máscara:
   - el primero permitirá escribir 16 números en grupos de 4, separados por '-'
