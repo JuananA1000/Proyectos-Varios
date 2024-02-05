@@ -25,18 +25,15 @@ h1 {
   font-size: 1.2em;
   padding: 7px;
   position: relative;
+  cursor: grab;
 }
 
-.resaltado::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgb(60, 60, 60);
-  border-radius: 50%;
-  width: 80%;
-  height: 80%;
-  box-sizing: border-box;
-  z-index: -1;
+.resultado {
+  margin: 80px auto;
+  width: 400px;
+  height: 100px;
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-top: 10px;
+  background-color: rgb(66, 66, 66);
 }

@@ -1,5 +1,7 @@
 const palabras = ['marzo', 'gazpacho', 'calvario'];
-const sopaLetras = document.getElementById('sopaLetras');
+const sopaLetras = document.querySelector('.sopa-letras');
+const resultado = document.querySelector('.resultado');
+
 const letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 // Pasamos las palabras del array a mayusculas
@@ -54,20 +56,6 @@ function insertarPalabra(matriz, palabra, direccion, fila, columna) {
   return false;
 }
 
-// Función para resaltar la letra al hacer clic
-function resaltarLetra(event) {
-  const celda = event.target;
-  celda.classList.add('resaltado');
-  console.log('Resaltar: ', celda);
-}
-
-// Función para quitar el resaltado de la letra
-function quitarResaltado(event) {
-  const celda = event.target;
-  celda.classList.remove('resaltado');
-  console.log('Quitar: ', celda);
-}
-
 // Función para insertar todas las palabras en la sopa de letras
 function insertarTodasPalabras() {
   // aMayusculas(palabras);
@@ -87,21 +75,17 @@ function insertarTodasPalabras() {
   // Mostrar la sopa de letras en el HTML
   for (let i = 0; i < 10; i++) {
     for (let j = 0; j < 10; j++) {
-      let celda = document.createElement('div');
+      const celda = document.createElement('div');
       celda.classList.add('celda');
       celda.textContent = matrizSopaLetras[i][j];
-      celda.addEventListener('click', resaltarLetra);
-      /*
-        PENDIENTE: Al pasar el ratón, que el evento se mantenga y, al ir pasando por encima de cada una de las letras
-        sucederán dos cosas:
-
-        - Las letras se irán subrayando y coloreando de color rojo.
-        - Aparecerán arriba las letras que se toquen, formando la palabra.
-        
-        Al volver a hacer click el evento se cancela
-      */
-      celda.addEventListener('mouseleave', quitarResaltado);
       sopaLetras.appendChild(celda);
+
+      celda.addEventListener('click', () => {
+      
+        
+        console.log('click');
+
+      });
     }
   }
 }
