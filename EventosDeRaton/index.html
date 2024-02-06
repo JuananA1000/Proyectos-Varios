@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Eventos De Ratón</title>
+  </head>
+  <body>
+    <h1>Eventos De Ratón</h1>
+    <p>Este ejemplo provocará cambios en estos botones para explicar los distintos <b>eventos del ratón</b>.</p>
+
+    <div class="container">
+      <div class="fila">
+        <section id="click" title="Este botón responde al hacer click en el botón">Click</section>
+        <section id="doble-click" title="Este botón responde al hacer doble click en el botón">Doble Click</section>
+        <section id="mouse-down" title="Este botón responde al presionar CUALQUIER botón del ratón">Mouse Down</section>
+        <section id="mouse-up" title="Este botón responde al levantar el dedo de CUALQUIER botón del ratón">
+          Mouse Up
+        </section>
+      </div>
+      <div class="fila">
+        <section id="mouse-move" title="Este botón responde al mover el ratón sobre él">Mouse Move</section>
+        <section id="mouse-over" title="Este botón responde al mover el ratón sobre él o sobre uno de sus hijos">
+          Mouse Over
+        </section>
+        <section id="mouse-out" title="Este botón responde cuando el ratón sale de un elemento o de uno de sus hijos">
+          Mouse Out
+        </section>
+        <section id="mouse-enter" title="Este botón responde cuando el ratón entra en un elemento">Mouse Enter</section>
+      </div>
+      <div style="display: flex; width: 1000px; justify-content: space-around">
+        <section id="mouse-leave" title="Este botón responde al sacar el ratón de él">Mouse Leave</section>
+        <section id="context-menu" title="Este botón responde al hacer click derecho para abrir el menú contextual">
+          Context Menu
+        </section>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
