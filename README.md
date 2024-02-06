@@ -45,6 +45,8 @@ En este repositorio se han desarrollado los siguientes proyectos:
 - 🔄 **Días para un evento**: crea una pequeña lista de tareas en que, al añadir, aparecerá también el número de dias que faltan para dicho evento,
 además, en cada tarea, añadiremos un botón rojo para eliminarlas.
 
+- 🖱️ **Eventos de Ratón**: un pequeño proyecto para estudiar los distintos eventos de ratón que ofrece JavaScript y su comportamiento.
+
 - 💳 **Input con máscara**: con la interfaz de una tarjeta de crédito, crearemos una app con tres campos con máscara:
   - el primero permitirá escribir 16 números en grupos de 4, separados por '-'
   - el segundo, 2 parejas de números separados por ‘/’
