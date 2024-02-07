@@ -48,6 +48,8 @@ además, en cada tarea, añadiremos un botón rojo para eliminarlas.
 
 - 🖱️ **Eventos de Ratón**: un pequeño proyecto para estudiar los distintos eventos de ratón que ofrece JavaScript y su comportamiento.
 
+- **Fetching de datos con APIKey**: Midu nos ofrece un [tutorial](https://youtu.be/6AMKwVcpYTk?si=QFxH1u6_T4PeOCzX) de 12 minutos para coger datos de una api utilizando  una clave. Rápido, sencillo y para toda la familia. 
+
 - 💳 **Input con máscara**: con la interfaz de una tarjeta de crédito, crearemos una app con tres campos con máscara:
   - el primero permitirá escribir 16 números en grupos de 4, separados por '-'
   - el segundo, 2 parejas de números separados por ‘/’

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Fetching con API Key</title>
+  </head>
+  <body>
+    <!-- 
+      TUTORIAL: https://youtu.be/6AMKwVcpYTk?si=sH-F1jXOb2suHqOS
+    -->
+    <h1>Fetching con API Key</h1>
+
+    <main class="container">
+      <form id="form">
+        <label>
+          IP del usuario
+          <small>Por ejemplo: 23.123.12.11</small>
+        </label>
+        <input id="input" type="text" placeholder="Introduce IP" required />
+        <button type="submit" id="submit">Buscar info de esta IP</button>
+      </form>
+
+      <div>
+        <pre id="results"></pre>
+      </div>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
