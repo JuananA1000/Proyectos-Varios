@@ -61,6 +61,7 @@ function crearCoctel() {
       coctel.includes('Azúcar')
     ) {
       fetchCocktailDbAPI('mojito');
+      coctel = []
     } else if (
       coctel.includes('Wiski') &&
       coctel.includes('Agua con Gas') &&
@@ -68,8 +69,10 @@ function crearCoctel() {
       coctel.includes('Azúcar')
     ) {
       fetchCocktailDbAPI('old fashioned');
+      coctel = []
     } else if (coctel.includes('Cachaza') && coctel.includes('Lima') && coctel.includes('Azúcar')) {
       fetchCocktailDbAPI('caipirinha');
+      coctel = []
     } else {
       resultado.innerHTML = 'Esa guarrada se la va a beber tu padre. Vacía la coctelera';
     }
