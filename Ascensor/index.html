@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador de Ascensor</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="botonera">
+      <button class="btnPlanta" data-floor="3">3</button>
+      <button class="btnPlanta" data-floor="2">2</button>
+      <button class="btnPlanta" data-floor="1">1</button>
+      <button class="btnPlanta" data-floor="0">0</button>
+      <button class="btnPlanta" data-floor="-1">-1</button>
+    </div>
+    <div id="ascensor" class="ascensor">ascensor</div>
+    <div id="passwordModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Enter Password:</p>
+        <input type="password" id="passwordInput" />
+        <button id="submitPassword">Submit</button>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
