@@ -38,28 +38,28 @@ window.addEventListener('click', (e) => {
     passwordModal.style.display = 'none';
   }
 });
-  
-  function irAPlanta(planta) {
-    if (planta === -1) {
-      ascensor.style.bottom = '0px';
-    }
-  
-    if (planta === 0) {
-      ascensor.style.bottom = '150px';
-    }
-  
-    if (planta === 1) {
-      ascensor.style.bottom = '300px';
-    }
-  
-    if (planta === 2) {
-      ascensor.style.bottom = '450px';
-    }
-  
-    if (planta === 3) {
-      ascensor.style.bottom = '600px';
-    }
-  
-    ascensor.innerText = `Planta ${planta}`;
-    plantaActual = planta;
+
+function irAPlanta(planta) {
+  if (planta === -1) {
+    ascensor.style.bottom = '0px';
   }
+
+  if (planta === 0) {
+    ascensor.style.bottom = '150px';
+  }
+
+  if (planta === 1) {
+    ascensor.style.bottom = '300px';
+  }
+
+  if (planta === 2) {
+    ascensor.style.bottom = '450px';
+  }
+
+  if (planta === 3) {
+    ascensor.style.bottom = '600px';
+  }
+
+  ascensor.innerText = `Planta ${planta}`;
+  plantaActual = planta;
+}

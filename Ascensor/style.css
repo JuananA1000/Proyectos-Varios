@@ -48,12 +48,32 @@ h1 {
   line-height: 150px;
 }
 
-.suelo{
-  border: 5px solid #000000;
+.suelo {
+  border-top: 5px dashed #000000;
   position: fixed;
   bottom: 150px;
   width: 100%;
- 
+}
+
+.p1 {
+  border-top: 5px dashed #e1e1e1;
+  position: fixed;
+  bottom: 300px;
+  width: 100%;
+}
+
+.p2 {
+  border-top: 5px dashed #e1e1e1;
+  position: fixed;
+  bottom: 450px;
+  width: 100%;
+}
+
+.p3 {
+  border-top: 5px dashed #e1e1e1;
+  position: fixed;
+  bottom: 600px;
+  width: 100%;
 }
 
 .modal {
