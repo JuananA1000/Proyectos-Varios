@@ -35,6 +35,7 @@ time.addEventListener('click', consoleTime);
 document.addEventListener('keydown', verConsola);
 
 function verConsola(event) {
+  // 123 es el keyCode de F12
   if (event.keyCode === 123) {
     let consoleBtns = document.querySelector('.console-btns');
     let pulsarF12 = document.querySelector('.pulsarF12');
@@ -42,9 +43,6 @@ function verConsola(event) {
     if (consoleBtns && pulsarF12) {
       consoleBtns.style.display = 'block';
       pulsarF12.style.display = 'none';
-    }else{
-      pulsarF12.style.display = 'block';
-
     }
   }
 }
