@@ -2,39 +2,58 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+body {
+  background-color: aliceblue;
+}
+
 h1 {
   text-align: center;
 }
 
 .botonera {
+  border: 5px solid #a7a7a7;
   position: fixed;
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
-  background: linear-gradient(45deg, #ffffff99, #ffffff33);
+  background: linear-gradient(45deg, #ffffffdb, #ffffff0e);
   background-color: #aaa; /* Color base del cromo */
   padding: 50px;
+  z-index: 1;
 }
 
 .btnPlanta {
   background-color: #a7a7a7; /* Color base del cromo */
   display: block;
   margin-bottom: 10px;
-  padding: 20px;
+  padding: 15px;
   border-radius: 50%;
-  border: 2px solid #ffffff;
+  border: 5px solid #ffffff;
   font-size: 20px;
+}
+
+.btnPlanta:hover {
+  background-color: #888888; /* Color base del cromo */
+  cursor: pointer;
 }
 
 .ascensor {
   position: fixed;
-  bottom: 10px;
+  bottom: 150px;
   right: 200px;
   width: 100px;
   height: 150px;
   background-color: #aaa;
   text-align: center;
   line-height: 150px;
+}
+
+.suelo{
+  border: 5px solid #000000;
+  position: fixed;
+  bottom: 150px;
+  width: 100%;
+ 
 }
 
 .modal {
