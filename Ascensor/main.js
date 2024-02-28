@@ -40,26 +40,34 @@ window.addEventListener('click', (e) => {
 });
 
 function irAPlanta(planta) {
-  if (planta === -1) {
-    ascensor.style.bottom = '0px';
+  let incremento = 1; // Velocidad de movimiento hacia arriba
+
+  if (plantaActual < planta) {
+    // el ascensor tiene que subir
+  } else {
+    // el ascensor tiene que bajar
   }
 
-  if (planta === 0) {
-    ascensor.style.bottom = '150px';
-  }
+  // if (planta === -1) {
+  //   ascensor.style.bottom = '0px';
+  // }
 
-  if (planta === 1) {
-    ascensor.style.bottom = '300px';
-  }
+  // if (planta === 0) {
+  //   ascensor.style.bottom = '150px';
+  // }
 
-  if (planta === 2) {
-    ascensor.style.bottom = '450px';
-  }
+  // if (planta === 1) {
+  //   ascensor.style.bottom = '300px';
+  // }
 
-  if (planta === 3) {
-    ascensor.style.bottom = '600px';
-  }
+  // if (planta === 2) {
+  //   ascensor.style.bottom = '450px';
+  // }
 
-  ascensor.innerText = `Planta ${planta}`;
-  plantaActual = planta;
+  // if (planta === 3) {
+  //   ascensor.style.bottom = '600px';
+  // }
+
+  // ascensor.innerText = `Planta ${planta}`;
+  // plantaActual = planta;
 }
