@@ -22,6 +22,15 @@ h1 {
   z-index: 1;
 }
 
+.display {
+  background-color: #000000;
+  padding: 10px;
+  color: rgb(229, 0, 0);
+  margin-bottom: 20px;
+  border: 5px solid #ffffff;
+  font-size: 20px;
+}
+
 .btnPlanta {
   background-color: #a7a7a7;
   display: block;

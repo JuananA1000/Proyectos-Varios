@@ -5,6 +5,7 @@ const passwordModal = document.getElementById('passwordModal');
 const passwordInput = document.getElementById('passwordInput');
 const submitPasswordBtn = document.getElementById('submitPassword');
 const modalCloseBtn = document.querySelector('.close');
+const display = document.querySelector('.display');
 
 let plantaActual = 0;
 
@@ -45,15 +46,16 @@ window.addEventListener('click', (e) => {
 //                                  FUNCIÓN REAL                                  |
 //--------------------------------------------------------------------------------|
 function moverAscensor(plantaDestino) {
-  let altura = plantaActual+150; // Altura final a la que quieres que suba el div
+  let altura = plantaActual + 150; // Altura final a la que quieres que suba el div
+  display.innerHTML = plantaActual;
   if (plantaActual < plantaDestino) {
-    plantaActual += altura;
-    ascensor.animate([{ bottom: plantaActual + 'px' }, { bottom: plantaActual + altura + 'px' }], {
-      duration: 1000,
-      iterations: 1,
-      easing: 'ease-out',
-      fill: 'forwards',
-    });
+    // plantaActual += altura;
+    // ascensor.animate([{ bottom: plantaActual + 'px' }, { bottom: plantaActual + altura + 'px' }], {
+    //   duration: 1000,
+    //   iterations: 1,
+    //   easing: 'ease-out',
+    //   fill: 'forwards',
+    // });
 
     console.log('El ascensor está en el piso ', plantaActual);
     console.log(' el ascensor tiene que subir');
@@ -62,10 +64,9 @@ function moverAscensor(plantaDestino) {
     console.log(' el ascensor tiene que bajar');
   } else {
     console.log('El ascensor está en el piso ', plantaActual);
-    // ascensor.innerHTML = 'Planta ' + plantaActual;
     console.log(' el ascensor SE QUEDA');
   }
-
+  
   plantaActual = plantaDestino;
 }
 
