@@ -74,7 +74,7 @@ function crearCoctel() {
       fetchCocktailDbAPI('caipirinha');
       coctel = []
     } else {
-      resultado.innerHTML = 'Esa guarrada se la va a beber tu padre. Vacía la coctelera';
+      resultado.innerHTML = 'Esa guarrada no se puede beber. Vacía la coctelera';
     }
   } else {
     resultado.innerHTML = 'La coctelera está vacía. Échale cosas';
@@ -84,7 +84,7 @@ function crearCoctel() {
 // Vaciamos el contenido de la pantalla
 function vaciarCoctelera() {
   if (coctel.length === 0) {
-    resultado.innerHTML = 'Está ya vacía, tonto, que eres tonto';
+    resultado.innerHTML = 'Esto está vacío ya';
   } else {
     coctel = [];
     resultado.innerHTML = '';
