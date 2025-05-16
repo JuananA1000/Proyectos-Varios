@@ -46,28 +46,32 @@ window.addEventListener('click', (e) => {
 //                                  FUNCIÓN REAL                                  |
 //--------------------------------------------------------------------------------|
 function moverAscensor(plantaDestino) {
-  let altura = plantaActual + 150; // Altura final a la que quieres que suba el div
-  display.innerHTML = plantaActual;
-  if (plantaActual < plantaDestino) {
-    // plantaActual += altura;
-    // ascensor.animate([{ bottom: plantaActual + 'px' }, { bottom: plantaActual + altura + 'px' }], {
-    //   duration: 1000,
-    //   iterations: 1,
-    //   easing: 'ease-out',
-    //   fill: 'forwards',
-    // });
+  const altura = 150; // Altura de cada piso
+  const diferencia = plantaDestino - plantaActual;
+  const pasos = Math.abs(diferencia);
+  const velocidad = 1000 / pasos; // milisegundos por piso
 
-    console.log('El ascensor está en el piso ', plantaActual);
-    console.log(' el ascensor tiene que subir');
-  } else if (plantaActual > plantaDestino) {
-    console.log('El ascensor está en el piso ', plantaActual);
-    console.log(' el ascensor tiene que bajar');
-  } else {
-    console.log('El ascensor está en el piso ', plantaActual);
-    console.log(' el ascensor SE QUEDA');
-  }
-  
-  plantaActual = plantaDestino;
+  let tiempo = 0;
+
+  display.innerHTML = plantaActual;
+
+  const id = setInterval(() => {
+    if (diferencia > 0) {
+      plantaActual++;
+    } else {
+      plantaActual--;
+    }
+
+    ascensor.style.bottom = `${plantaActual * altura}px`;
+
+    display.innerHTML = plantaActual;
+
+    tiempo += velocidad;
+
+    if (tiempo >= 1000) {
+      clearInterval(id);
+    }
+  }, velocidad);
 }
 
 //--------------------------------------------------------------------------------|
