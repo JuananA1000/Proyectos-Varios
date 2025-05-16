@@ -15,7 +15,6 @@ botonesPlanta.forEach((button) => {
     if (planta === -1) {
       passwordModal.style.display = 'block';
     } else {
-      // irAPlanta(planta);
       moverAscensor(planta);
     }
   });
@@ -25,7 +24,6 @@ submitPasswordBtn.addEventListener('click', () => {
   const password = passwordInput.value;
   if (password === '1234') {
     passwordModal.style.display = 'none';
-    // irAPlanta(-1);
     moverAscensor(-1);
   } else {
     alert('Incorrect Password!');
@@ -42,9 +40,6 @@ window.addEventListener('click', (e) => {
   }
 });
 
-//--------------------------------------------------------------------------------|
-//                                  FUNCIÓN REAL                                  |
-//--------------------------------------------------------------------------------|
 function moverAscensor(plantaDestino) {
   const altura = 150; // Altura de cada piso
   const diferencia = plantaDestino - plantaActual;
@@ -74,9 +69,6 @@ function moverAscensor(plantaDestino) {
   }, velocidad);
 }
 
-//--------------------------------------------------------------------------------|
-//                                 FUNCIÓN BÁSICA                                 |
-//--------------------------------------------------------------------------------|
 function irAPlanta(planta) {
   if (planta === -1) {
     ascensor.style.bottom = '0px';
